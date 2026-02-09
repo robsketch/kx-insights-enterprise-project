@@ -1,0 +1,25 @@
+# yaml-language-server: $schema=https://code.kx.com/insights/enterprise/packaging/schemas/package.json#/$defs/Manifest
+uuid: 19bdac68-007c-4e35-a7ae-d3ed6aee2960
+name: equities
+version: 0.0.1
+dependencies: []
+metadata: {}
+tables:
+  trade:
+    file: tables/trade.yaml
+  static:
+    file: tables/static.yaml
+databases:
+  equities:
+    dir: databases/equities
+    shards:
+    - equities-shard
+    tables: []
+pipelines:
+  static:
+    file: pipelines/static.yaml
+  equities-rt:
+    file: pipelines/equities-rt.yaml
+router: router/router.yaml
+views: {}
+patches: []

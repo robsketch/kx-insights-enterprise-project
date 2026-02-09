@@ -1,0 +1,159 @@
+{
+    "vertices": [
+        {
+            "id": "Expression",
+            "function": null,
+            "inputs": {
+                "": "*"
+            },
+            "outputs": {
+                "d95e7507-1bbc-4d71-8cba-3c6ca5a94bcd": "*"
+            },
+            "config": {
+                "expr": {
+                    "format": "q",
+                    "function": "// Define a q expression or function that will return the desired data\n// @return {any} data to pass to the next node\n\ngenData[]"
+                },
+                "trigger": {
+                    "mode": "timer",
+                    "period": "0D00:00:30.000000000",
+                    "setStartTime": false,
+                    "startTime": "0"
+                }
+            },
+            "metadata": {
+                "type": "reader",
+                "plugin": "expr",
+                "params": [],
+                "initialState": null,
+                "stateful": false,
+                "version": 1,
+                "ui": {
+                    "color": "#0061ff",
+                    "type": "expr",
+                    "version": "insights-1.15.0",
+                    "data": {
+                        "id": "Expression",
+                        "function": null,
+                        "inputs": {
+                            "": "*"
+                        },
+                        "outputs": {
+                            "d95e7507-1bbc-4d71-8cba-3c6ca5a94bcd": "*"
+                        },
+                        "config": {
+                            "expr": {
+                                "format": "q",
+                                "function": "// Define a q expression or function that will return the desired data\n// @return {any} data to pass to the next node\n\ngenData[]"
+                            },
+                            "trigger": {
+                                "mode": "timer",
+                                "period": "0D00:00:30.000000000",
+                                "setStartTime": false,
+                                "startTime": "0"
+                            }
+                        },
+                        "metadata": {
+                            "type": "reader",
+                            "plugin": "expr",
+                            "params": [],
+                            "initialState": null,
+                            "stateful": false,
+                            "version": 1
+                        }
+                    },
+                    "id": "Expression",
+                    "position": {
+                        "x": 62.199981689453125,
+                        "y": 161.59999084472656
+                    }
+                }
+            }
+        },
+        {
+            "id": "kdb Insights Database",
+            "function": null,
+            "inputs": {
+                "d95e7507-1bbc-4d71-8cba-3c6ca5a94bcd": "*"
+            },
+            "outputs": {
+                "": "*"
+            },
+            "config": {
+                "directWrite": false,
+                "deduplicate": true,
+                "retries": 60,
+                "retryWait": "0D00:00:03.000000000",
+                "assembly": "equities",
+                "table": "trade"
+            },
+            "metadata": {
+                "type": "writer",
+                "plugin": "database.writer",
+                "params": [],
+                "initialState": null,
+                "stateful": false,
+                "version": 1,
+                "ui": {
+                    "color": "#f23a65",
+                    "type": "database.writer",
+                    "version": "insights-1.15.0",
+                    "data": {
+                        "id": "kdb Insights Database",
+                        "function": null,
+                        "inputs": {
+                            "d95e7507-1bbc-4d71-8cba-3c6ca5a94bcd": "*"
+                        },
+                        "outputs": {
+                            "": "*"
+                        },
+                        "config": {
+                            "directWrite": false,
+                            "deduplicate": true,
+                            "__setTimeoutVal": false,
+                            "retries": 60,
+                            "retryWait": "0D00:00:03.000000000",
+                            "assembly": "equities",
+                            "table": "trade"
+                        },
+                        "metadata": {
+                            "type": "writer",
+                            "plugin": "database.writer",
+                            "params": [],
+                            "initialState": null,
+                            "stateful": false,
+                            "version": 1
+                        }
+                    },
+                    "id": "kdb Insights Database",
+                    "position": {
+                        "x": 367.1999816894531,
+                        "y": 161.59999084472656
+                    }
+                }
+            }
+        }
+    ],
+    "edges": [
+        {
+            "destination": "kdb Insights Database",
+            "source": "Expression",
+            "edge": "d95e7507-1bbc-4d71-8cba-3c6ca5a94bcd",
+            "metadata": {
+                "ui": {
+                    "id": "d95e7507-1bbc-4d71-8cba-3c6ca5a94bcd",
+                    "source": "Expression",
+                    "target": "kdb Insights Database",
+                    "sourceHandle": "0",
+                    "targetHandle": "0",
+                    "animated": true
+                }
+            },
+            "valid": true
+        }
+    ],
+    "code": {
+        "format": "q",
+        "function": "// define some starting prices for dummy feed via an expression reader\r\n\r\nuniverse:(!) . flip \r\n    (\r\n    (`AAPL;200.);\r\n    (`MSFT;150.);\r\n    (`NVDA;180.);\r\n    (`AMD;190.)\r\n    );\r\n\r\n// create a table of distinct records for each instrument\r\n\r\ndrift:{(rand -1 1)*0.01*count[universe]?1.}\r\n\r\n// simple function to generate data with a slight drift up/or down randomly\r\ngenData:{[]\r\n  price:value[universe]*(1-drift[]);\r\n  size:count[universe]?100*1+til 10;\r\n  side:count[universe]?`BUY`SELL;\r\n  data:flip (!) . flip (\r\n    (`time;.z.P);\r\n    (`sym;key[universe]);\r\n    (`price;price);\r\n    (`size;size);\r\n    (`side;side)\r\n    );\r\n  @[`universe;key[universe];:;price];\r\n  :data;\r\n  };\r\n"
+    }
+}

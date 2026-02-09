@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=https://code.kx.com/insights/enterprise/packaging/schemas/package.json#/$defs/Table
+uuid: 00bfeec4-73a3-4674-9425-b2ada5f4bf8b
+columns:
+- name: sym
+  type: symbol
+- name: IPOdate
+  type: date
+- name: companyName
+  type: string
+- name: previousClose
+  type: float
+name: static
+primaryKeys: []
+sortColsDisk: []
+sortColsMem: []
+sortColsOrd: []
+type: splayed

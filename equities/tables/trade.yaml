@@ -1,0 +1,26 @@
+# yaml-language-server: $schema=https://code.kx.com/insights/enterprise/packaging/schemas/package.json#/$defs/Table
+uuid: cf2a16d9-79b7-4f6a-ba9d-704c4e417ad4
+columns:
+- attrMem: sorted
+  attrOrd: sorted
+  name: time
+  type: timestamp
+- attrDisk: parted
+  name: sym
+  type: symbol
+- name: price
+  type: float
+- name: size
+  type: long
+- name: side
+  type: symbol
+name: trade
+primaryKeys: []
+prtnCol: time
+sortColsDisk:
+- sym
+sortColsMem:
+- time
+sortColsOrd:
+- time
+type: partitioned

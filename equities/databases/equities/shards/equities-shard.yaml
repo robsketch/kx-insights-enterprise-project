@@ -1,0 +1,103 @@
+# yaml-language-server: $schema=https://code.kx.com/insights/enterprise/packaging/schemas/package.json#/$defs/Shard
+uuid: 34c4fe49-c6c2-4c88-94b9-fde68490beb0
+name: equities-shard
+labels:
+  kxname: equities
+dbSettings:
+  encryption:
+    encryptAll: true
+sm:
+  clusterMode: shared
+  env: []
+  eodPeachLevel: part
+  k8sPolicy:
+    resources:
+      limits:
+        cpu: 1000m
+        memory: 4Gi
+      requests:
+        cpu: 500m
+        memory: 2Gi
+  rtLogVolume:
+    size: 40Gi
+  size: 1
+  source: equities
+  tiers:
+  - mount: rdb
+    name: rdb
+  - compression:
+      algorithm: qipc
+      block: 14
+      level: 0
+    mount: idb
+    name: idb
+    schedule:
+      freq: 0D00:10:00
+  - compression:
+      algorithm: qipc
+      block: 14
+      level: 0
+    mount: hdb
+    name: hdb
+    schedule:
+      freq: 1D00:00:00
+daps:
+  instances:
+    da:
+      env: []
+      k8sPolicy:
+        resources:
+          limits:
+            cpu: 200m
+            memory: 4Gi
+          requests:
+            cpu: 100m
+            memory: 2Gi
+      mountList:
+      - rdb
+      - idb
+      - hdb
+      name: da
+      rtLogVolume:
+        size: 40Gi
+      size: 1
+      source: equities
+  lateData: true
+sequencers:
+  equities:
+    uuid: 52c22c75-8cce-45ed-a800-884e42b42b04
+    external: false
+    k8sPolicy:
+      resources:
+        limits:
+          cpu: 1000m
+          memory: 1Gi
+        requests:
+          cpu: 1000m
+          memory: 512Mi
+    name: equities
+    size: 3
+    volume:
+      size: 40Gi
+mounts:
+  rdb:
+    baseURI: none
+    dependency:
+    - idb
+    partition: none
+    type: stream
+    volume: {}
+  idb:
+    baseURI: file:///data/db/idb
+    partition: ordinal
+    type: local
+    volume:
+      size: 30Gi
+  hdb:
+    baseURI: file:///data/db/hdb
+    dependency:
+    - idb
+    partition: date
+    type: local
+    volume:
+      size: 60Gi

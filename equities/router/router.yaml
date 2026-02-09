@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=https://code.kx.com/insights/enterprise/packaging/schemas/package.json#/$defs/Router
+uuid: 1e798232-c946-4535-b672-083ebbd6ea5c
+qe:
+  enabled: false
+  size: 0

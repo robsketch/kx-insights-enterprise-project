@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=https://code.kx.com/insights/enterprise/packaging/schemas/package.json#/$defs/Pipeline
+uuid: a873a422-925a-4602-b62c-f8f17458c9b8
+base: q
+controller:
+  image:
+    component: ''
+    repo: ''
+    tag: ''
+  k8sPolicy:
+    resources:
+      limits:
+        cpu: 500m
+        memory: 256Mi
+      requests:
+        cpu: 250m
+        memory: 128Mi
+  labels: {}
+  persistence:
+    checkpointFreq: 5000
+    class: ''
+    disabled: false
+    size: 20Gi
+env:
+- name: KXI_PROTECTED_EXECUTION
+  value: 'true'
+- name: KXI_LOG_FORMAT
+  value: json
+- name: KXI_LOG_LEVELS
+  value: 'DEFAULT: INFO'
+imagePullSecrets: []
+maxWorkers: 10
+metrics:
+  recordCounting: 1
+minWorkers: 1
+monitoring: true
+name: equities-rt
+protectedExecution: true
+replicas: 1
+secrets: []
+spec: file://src/equities-rt.json
+type: graph
+worker:
+  image:
+    component: ''
+    repo: ''
+    tag: ''
+  k8sPolicy:
+    resources:
+      limits:
+        cpu: 1000m
+        memory: 512Mi
+      requests:
+        cpu: 500m
+        memory: 256Mi
+  labels: {}
+  persistence:
+    checkpointFreq: 5000
+    class: ''
+    disabled: false
+    size: 20Gi
+  threads: 0
