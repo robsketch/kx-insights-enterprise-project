@@ -9,6 +9,8 @@ tables:
     file: tables/trade.yaml
   static:
     file: tables/static.yaml
+  hloc:
+    file: tables/hloc.yaml
 databases:
   equities:
     dir: databases/equities
@@ -21,5 +23,9 @@ pipelines:
   equities-rt:
     file: pipelines/equities-rt.yaml
 router: router/router.yaml
-views: {}
+views:
+  equities:
+    file: views/equities.yaml
+  analytics:
+    file: views/analytics.yaml
 patches: []

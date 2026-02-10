@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=https://code.kx.com/insights/enterprise/packaging/schemas/package.json#/$defs/Table
+uuid: 9236c4df-07b4-4d08-a4f6-87d2e877b0a9
+columns:
+- name: time
+  type: timestamp
+- name: sym
+  type: symbol
+- name: minute
+  type: time
+- name: high
+  type: float
+- name: low
+  type: float
+- name: open
+  type: float
+- name: close
+  type: float
+name: hloc
+primaryKeys: []
+prtnCol: time
+sortColsDisk: []
+sortColsMem: []
+sortColsOrd: []
+type: partitioned

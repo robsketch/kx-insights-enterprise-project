@@ -7,7 +7,7 @@
                 "": "*"
             },
             "outputs": {
-                "d95e7507-1bbc-4d71-8cba-3c6ca5a94bcd": "*"
+                "e1771489-a792-4f77-8081-9f9e5b56d736": "*"
             },
             "config": {
                 "expr": {
@@ -39,7 +39,7 @@
                             "": "*"
                         },
                         "outputs": {
-                            "d95e7507-1bbc-4d71-8cba-3c6ca5a94bcd": "*"
+                            "e1771489-a792-4f77-8081-9f9e5b56d736": "*"
                         },
                         "config": {
                             "expr": {
@@ -64,8 +64,8 @@
                     },
                     "id": "Expression",
                     "position": {
-                        "x": 62.199981689453125,
-                        "y": 161.59999084472656
+                        "x": 45.199981689453125,
+                        "y": 124.59999084472656
                     }
                 }
             }
@@ -74,7 +74,7 @@
             "id": "kdb Insights Database",
             "function": null,
             "inputs": {
-                "d95e7507-1bbc-4d71-8cba-3c6ca5a94bcd": "*"
+                "f4935310-12d8-4569-aac6-fb500c72374e": "*"
             },
             "outputs": {
                 "": "*"
@@ -102,7 +102,7 @@
                         "id": "kdb Insights Database",
                         "function": null,
                         "inputs": {
-                            "d95e7507-1bbc-4d71-8cba-3c6ca5a94bcd": "*"
+                            "f4935310-12d8-4569-aac6-fb500c72374e": "*"
                         },
                         "outputs": {
                             "": "*"
@@ -127,8 +127,168 @@
                     },
                     "id": "kdb Insights Database",
                     "position": {
-                        "x": 367.1999816894531,
-                        "y": 161.59999084472656
+                        "x": 833.1999816894531,
+                        "y": 124.98495788574218
+                    }
+                }
+            }
+        },
+        {
+            "id": "JSON",
+            "function": null,
+            "inputs": {
+                "e1771489-a792-4f77-8081-9f9e5b56d736": "*"
+            },
+            "outputs": {
+                "c117a07d-c5fd-462a-bc1b-00cc3b3646b7": "*"
+            },
+            "config": {
+                "decodeEach": false
+            },
+            "metadata": {
+                "type": "decoder",
+                "plugin": "json.decode",
+                "params": [],
+                "initialState": null,
+                "stateful": false,
+                "version": 1,
+                "ui": {
+                    "color": "#76c398",
+                    "type": "json.decode",
+                    "version": "insights-1.15.0",
+                    "data": {
+                        "id": "JSON",
+                        "function": null,
+                        "inputs": {
+                            "e1771489-a792-4f77-8081-9f9e5b56d736": "*"
+                        },
+                        "outputs": {
+                            "c117a07d-c5fd-462a-bc1b-00cc3b3646b7": "*"
+                        },
+                        "config": {
+                            "decodeEach": false
+                        },
+                        "metadata": {
+                            "type": "decoder",
+                            "plugin": "json.decode",
+                            "params": [],
+                            "initialState": null,
+                            "stateful": false,
+                            "version": 1
+                        }
+                    },
+                    "id": "JSON",
+                    "position": {
+                        "x": 297.1999816894531,
+                        "y": 124.59999084472656
+                    }
+                }
+            }
+        },
+        {
+            "id": "Apply Schema",
+            "function": null,
+            "inputs": {
+                "c117a07d-c5fd-462a-bc1b-00cc3b3646b7": "*"
+            },
+            "outputs": {
+                "f4935310-12d8-4569-aac6-fb500c72374e": "*"
+            },
+            "config": {
+                "inputType": "auto",
+                "schemaType": "schema",
+                "schema": [
+                    {
+                        "name": "time",
+                        "datatype": "timestamp",
+                        "tokenize": "auto"
+                    },
+                    {
+                        "name": "sym",
+                        "datatype": "symbol",
+                        "tokenize": "auto"
+                    },
+                    {
+                        "name": "price",
+                        "datatype": "float",
+                        "tokenize": "auto"
+                    },
+                    {
+                        "name": "size",
+                        "datatype": "long",
+                        "tokenize": "auto"
+                    },
+                    {
+                        "name": "side",
+                        "datatype": "symbol",
+                        "tokenize": "auto"
+                    }
+                ]
+            },
+            "metadata": {
+                "type": "transform",
+                "plugin": "schema",
+                "params": [],
+                "initialState": null,
+                "stateful": false,
+                "version": 1,
+                "ui": {
+                    "color": "#85b6ff",
+                    "type": "schema",
+                    "version": "insights-1.15.0",
+                    "data": {
+                        "id": "Apply Schema",
+                        "function": null,
+                        "inputs": {
+                            "c117a07d-c5fd-462a-bc1b-00cc3b3646b7": "*"
+                        },
+                        "outputs": {
+                            "f4935310-12d8-4569-aac6-fb500c72374e": "*"
+                        },
+                        "config": {
+                            "inputType": "auto",
+                            "schemaType": "schema",
+                            "schema": [
+                                {
+                                    "name": "time",
+                                    "datatype": "timestamp",
+                                    "tokenize": "auto"
+                                },
+                                {
+                                    "name": "sym",
+                                    "datatype": "symbol",
+                                    "tokenize": "auto"
+                                },
+                                {
+                                    "name": "price",
+                                    "datatype": "float",
+                                    "tokenize": "auto"
+                                },
+                                {
+                                    "name": "size",
+                                    "datatype": "long",
+                                    "tokenize": "auto"
+                                },
+                                {
+                                    "name": "side",
+                                    "datatype": "symbol",
+                                    "tokenize": "auto"
+                                }
+                            ]
+                        },
+                        "metadata": {
+                            "type": "transform",
+                            "plugin": "schema",
+                            "params": [],
+                            "initialState": null,
+                            "stateful": false,
+                            "version": 1
+                        }
+                    },
+                    "id": "Apply Schema",
+                    "position": {
+                        "x": 564.1999816894531,
+                        "y": 124.59999084472656
                     }
                 }
             }
@@ -136,13 +296,45 @@
     ],
     "edges": [
         {
-            "destination": "kdb Insights Database",
+            "destination": "JSON",
             "source": "Expression",
-            "edge": "d95e7507-1bbc-4d71-8cba-3c6ca5a94bcd",
+            "edge": "e1771489-a792-4f77-8081-9f9e5b56d736",
             "metadata": {
                 "ui": {
-                    "id": "d95e7507-1bbc-4d71-8cba-3c6ca5a94bcd",
+                    "id": "e1771489-a792-4f77-8081-9f9e5b56d736",
                     "source": "Expression",
+                    "target": "JSON",
+                    "sourceHandle": "0",
+                    "targetHandle": "0",
+                    "animated": true
+                }
+            },
+            "valid": true
+        },
+        {
+            "destination": "Apply Schema",
+            "source": "JSON",
+            "edge": "c117a07d-c5fd-462a-bc1b-00cc3b3646b7",
+            "metadata": {
+                "ui": {
+                    "id": "c117a07d-c5fd-462a-bc1b-00cc3b3646b7",
+                    "source": "JSON",
+                    "target": "Apply Schema",
+                    "sourceHandle": "0",
+                    "targetHandle": "0",
+                    "animated": true
+                }
+            },
+            "valid": true
+        },
+        {
+            "destination": "kdb Insights Database",
+            "source": "Apply Schema",
+            "edge": "f4935310-12d8-4569-aac6-fb500c72374e",
+            "metadata": {
+                "ui": {
+                    "id": "f4935310-12d8-4569-aac6-fb500c72374e",
+                    "source": "Apply Schema",
                     "target": "kdb Insights Database",
                     "sourceHandle": "0",
                     "targetHandle": "0",
@@ -154,6 +346,6 @@
     ],
     "code": {
         "format": "q",
-        "function": "// define some starting prices for dummy feed via an expression reader\r\n\r\nuniverse:(!) . flip \r\n    (\r\n    (`AAPL;200.);\r\n    (`MSFT;150.);\r\n    (`NVDA;180.);\r\n    (`AMD;190.)\r\n    );\r\n\r\n// create a table of distinct records for each instrument\r\n\r\ndrift:{(rand -1 1)*0.01*count[universe]?1.}\r\n\r\n// simple function to generate data with a slight drift up/or down randomly\r\ngenData:{[]\r\n  price:value[universe]*(1-drift[]);\r\n  size:count[universe]?100*1+til 10;\r\n  side:count[universe]?`BUY`SELL;\r\n  data:flip (!) . flip (\r\n    (`time;.z.P);\r\n    (`sym;key[universe]);\r\n    (`price;price);\r\n    (`size;size);\r\n    (`side;side)\r\n    );\r\n  @[`universe;key[universe];:;price];\r\n  :data;\r\n  };\r\n"
+        "function": "// define some starting prices for dummy feed via an expression reader\r\n\r\nuniverse:(!) . flip \r\n    (\r\n    (`AAPL;200.);\r\n    (`MSFT;150.);\r\n    (`NVDA;180.);\r\n    (`AMD;190.)\r\n    );\r\n\r\n// create a table of distinct records for each instrument\r\n\r\ndrift:{(rand -1 1)*0.01*1?1.}\r\n\r\n// simple function to generate data with a slight drift up/or down randomly\r\ngenData:{[]\r\n  sym:enlist rand key universe;\r\n  price:universe[sym]*(1-drift[]);\r\n  size:1?100*1+til 10;\r\n  side:1?`BUY`SELL;\r\n  data:.j.j flip (!) . flip (\r\n    (`time;.z.P);\r\n    (`sym;sym);\r\n    (`price;price);\r\n    (`size;size);\r\n    (`side;side)\r\n    );\r\n  @[`universe;sym;:;first price];\r\n  :data;\r\n  };\r\n"
     }
 }

@@ -1,0 +1,500 @@
+# yaml-language-server: $schema=https://code.kx.com/insights/enterprise/packaging/schemas/package.json#/$defs/View
+uuid: 8289176c-5d50-4158-96af-fd7030658337
+name: equities
+data:
+  title: equities
+  name: equities
+  advancedCss: ''
+  borderBackground: '000000'
+  borderColor: '000000'
+  borderRounding: 0
+  borderShadow: false
+  borderSpacing: 0
+  borderWidth: 0
+  colCount: 36
+  cssClasses: ''
+  dashboardTheme: Light
+  data:
+    New node:
+      _pagingType: NONE
+      _autoExecute: true
+      _autoExec: true
+      _columns:
+      - time
+      - price
+      _dataType: query
+      _dataSource: kdb
+      _connection: equities|idb
+      _connection_Viewstate: ''
+      _mappings:
+        key: time
+        mappings: {}
+        value: time
+      _maxRows: 2000
+      _subscriptionType: static
+      _subscriptionInterval: 3
+      _layout:
+      - isExpanded: true
+        weight: 2
+      - isExpanded: false
+        weight: 1
+      - isExpanded: false
+        weight: 1
+      - isExpanded: true
+        weight: 0
+      - isExpanded: true
+        weight: 2
+      _queryString: select time,price from trade where sym=`AAPL
+      _queryParams: []
+      _subscriptionKey: ''
+      _hasUpdateQuery: false
+      _updateQueryParams: []
+      _updateQueryString: ''
+      _updateType: query
+      _pageSize: 2000
+      _serverPaging: false
+  enableShareDashboard: false
+  floatable: true
+  relativeHeight: true
+  rowCount: 24
+  rowHeight: 25
+  saveViewerState: enabled
+  screens:
+  - id: a08d3123-59c7-e5e0-2586-0886ec42ea97
+    name: Screen 1
+    thumb: null
+    widgets:
+    - id: 04d2df95-444d-7f9c-faa1-eafef4b75762
+      layout:
+        row: 0
+        column: 0
+        rowSpan: 11
+        colSpan: 18
+      component:
+        id: 8c78f565-c195-32ff-12d9-595ee69d6322
+        key: ChartGL
+        options:
+          version: v2.11.0
+          possibleLegendGroups:
+          - None
+          possiblePositions:
+          - Top
+          - Bottom
+          - Left
+          - Right
+          Style:
+            advanced: ''
+            cssClasses: ''
+          Basics:
+            Name: first chart
+            Hover: ''
+            Selected: ''
+            Focus: ''
+            SelectFirstPoint: false
+            RangeSelection: false
+            Zoom: true
+            Duration: 400
+            Easing: easeOutQuart
+            TrackLoadTime: false
+            LoadTime: ''
+            UsePatterns: false
+            UseHierarchicalRules: true
+          Layers:
+          - IncreaseColor: '#7ad16f'
+            DecreaseColor: '#d1776f'
+            possibleActionsColumns:
+            - None
+            - <thisX>
+            - <thisY>
+            - <thisName>
+            - sym
+            - time
+            - APPLprice
+            possibleColorColumns:
+            - None
+            - sym
+            - time
+            - APPLprice
+            possibleRadiusData:
+            - Fixed Size
+            - sym
+            - time
+            - price
+            possibleLayers: []
+            possibleRulesColumns: []
+            possibleXColumns:
+            - sym
+            - time
+            - APPLprice
+            possibleYColumns:
+            - '*'
+            - sym
+            - time
+            - APPLprice
+            possibleMultiColumns:
+            - ''
+            - '*'
+            - sym
+            - time
+            - APPLprice
+            Data:
+              _dashboardsType: data
+              value: New node
+            PaletteTheme: ' '
+            Palette:
+            - type: '#0061FF'
+            - type: '#F23A66'
+            - type: '#009BAB'
+            - type: '#7647CC'
+            - type: '#FFC300'
+            - type: '#9FA3A6'
+            - type: '#003A99'
+            - type: '#A90B31'
+            - type: '#005D67'
+            - type: '#452481'
+            Actions: []
+            HighlightRules: []
+            _Id: L0
+            _Type: Waterfall
+            possibleXAxes:
+            - X-Axis 1
+            possibleYAxes:
+            - Y-Axis 1
+            Name: Layer 1
+            XAxisId: X-Axis 1
+            YAxisId: Y-Axis 1
+            Opacity: 80
+            LegendGroup: None
+            ColorData: None
+            ShowCurrentTick: false
+            CacheStreamingData: false
+            Legend: true
+            Enabled: true
+            Labels:
+              Align: center
+              Color: '#000000'
+              Enabled: false
+              Font:
+                Bold: false
+                Size: 12
+              Frequency: 1
+              Offset: '0'
+              Rotation: 0
+              MaxLabels: 10
+              Template: '{{x}}, {{toFixed y 2}}'
+            XAxis: time
+            YAxis: '*'
+            XAxisMulti: ''
+            Bars:
+              BarWidth: 95
+              BarFixedWidth: 10
+              BarWidthType: Percentage
+              BarOrientation: Vertical
+            Bubbles: {}
+          Xaxes:
+          - Bounds: ''
+            Type: Linear
+            Position: Bottom
+            Width: 0
+            Ticks: 10
+            Color: ''
+            Stacked: false
+            Title:
+              Display: true
+              LabelString: time
+              FontSize: 16
+            Range:
+              UseMinMax: false
+              Min: ''
+              Max: ''
+              SelectionMin: ''
+              SelectionMax: ''
+              ResetToNull: true
+            Gridlines:
+              GridlinesOffset: false
+              GridlinesColor: ''
+              GridlinesOpacity: 15
+            Format:
+              Display: true
+              Rotation: 0
+              BeginAtZero: false
+              Format: Number
+              DateFormat: ''
+              Precision: 2
+              FontSize: 12
+              Prefix: ''
+              Suffix: ''
+              HideTrailingZeroes: false
+              MultiAxis: []
+          Yaxes:
+          - Bounds: ''
+            Type: Linear
+            Position: Left
+            Width: 0
+            Ticks: 10
+            Color: ''
+            Stacked: false
+            Title:
+              Display: true
+              LabelString: price
+              FontSize: 16
+            Range:
+              UseMinMax: false
+              Min: ''
+              Max: ''
+              SelectionMin: ''
+              SelectionMax: ''
+              ResetToNull: true
+            Gridlines:
+              GridlinesOffset: false
+              GridlinesColor: ''
+              GridlinesOpacity: 15
+            Format:
+              Display: true
+              Rotation: 0
+              BeginAtZero: false
+              Format: Number
+              DateFormat: ''
+              Precision: 2
+              FontSize: 12
+              Prefix: ''
+              Suffix: ''
+              HideTrailingZeroes: false
+          Overlay:
+            ShowCrosshairs: true
+            ShowCoordinates: true
+            SnapToPoint: true
+            UseCustomTooltip: false
+            CustomTooltip: '<table><thead><tr><th>{{this.0.xAxis}}</th><th></th></tr></thead><tbody>{{#each
+              this}}<tr><td width="{{width}}"><i class="{{icon}}" style="color:{{color}};
+              {{image}};"></i> {{name}}: </td><td>{{yAxis}}</td></tr>{{/each}}</tbody></table>'
+            ShowAllLayers: true
+            ShowAllPoints: false
+            GroupByLayer: false
+          Legend:
+            Position: Top
+            UseCustomLegend: false
+            CustomLegend: "\n<ul class=\"chartgl-legend\">\n  {{#each this}}\n    {{!--
+              legend color --}}\n    <li>\n      {{#if icon}}\n        <i style=\"height:{{width}}px;color:{{color}};margin-top:2.5px;margin-right:5px;{{image}}\"class=\"fa
+              {{icon}}\"></i>\n      {{else}}  \n        {{#if bullColor}}\n          <span
+              style=\"margin-right:5px;\">  \n            <i style=\"font-size: 16px;color:{{color}};margin-top:0;\"
+              class=\"fa fa-ellipsis-v\"></i>\n            <i style=\"font-size: 8px;margin-left:-5px;color:{{bullColor}};margin-top:3px;position:
+              absolute;\"class=\"fa fa-square\"></i>\n          </span>\n        {{else}}\n
+              \         {{#if isHeatmap}}\n            <svg style=\"background:{{color}};
+              border-radius:2px;width:{{width}}px; height:{{width}}px;margin-top:2px;margin-right:5px;{{image}}\"class=\"fa
+              fa-square\"></svg>\n          {{else}}\n            <i style=\"height:{{width}}px;color:{{color}};margin-top:2.5px;margin-right:5px;{{image}}\"class=\"fa
+              fa-square\"></i>\n            {{/if}}\n        {{/if}}\n      {{/if}}\n\n
+              \     {{!-- legend text --}}\n      <span style=\"color:{{fontColor}};
+              text-decoration:{{strike}}\" id=\"{{text}}\">{{text}}</span>\n    </li>\n
+              \ {{/each}}\n</ul>"
+            LegendGroups: []
+          Annotations:
+            ShowAnnotateControl: false
+            Annotations: ''
+          FileExport:
+            Actions: []
+            FileName: []
+            ShowExportCsvButton: false
+            ShowExportExcelButton: false
+            ShowExportPngButton: false
+            PngButton: Export Png
+            UseChartFormat: false
+          OverrideRules: []
+          HierarchicalRules: []
+          Alignment:
+            paddingLeft: 0
+            paddingRight: 0
+            paddingTop: 0
+            paddingBottom: 0
+            innerPaddingLeft: 0
+            innerPaddingRight: 0
+            innerPaddingTop: 0
+            innerPaddingBottom: 0
+            titlePaddingLeft: 0
+            titlePaddingRight: 0
+            titlePaddingTop: 7
+            titlePaddingBottom: 7
+          format:
+            titleFontSize: 16
+            titleHorizontal: Center
+            titleShadow: false
+            tileBorderWidth: 0
+            tileBorderRounding: 0
+            tileBorderColor: '#000000'
+            tileBackgroundColor: '#000000'
+            tileTransparentBackground: true
+            tileShadow: false
+          possiblePalettes:
+          - ' '
+        containerId: null
+        components: []
+        widgets: []
+        definitionId: '669'
+        hasOnSettingsChange: true
+    - id: b6304202-d327-711d-c648-28962108c4c5
+      layout:
+        row: 0
+        column: 18
+        rowSpan: 11
+        colSpan: 17
+      component:
+        id: 4a6e6ff1-efe1-2135-d927-7a2e645cea53
+        key: Datagrid
+        options:
+          version: v2.11.0
+          datagridPossibleColumns:
+          - sym
+          - time
+          - APPLprice
+          datagridPossibleHeaderColumns:
+          - none
+          datagridPossibleColumnsWithItself:
+          - <this>
+          - sym
+          - time
+          - APPLprice
+          selectedColumnPossibleValues:
+          - sym
+          - time
+          - APPLprice
+          highlightTargetPossibleValues:
+          - sym
+          - time
+          - APPLprice
+          - '*'
+          sortingPossibleValues:
+          - ''
+          - sym
+          - time
+          - APPLprice
+          footerPossibleValues:
+          - None
+          - Average
+          - Count
+          - Sum
+          - WeightedAverage
+          Basics:
+            Data:
+              _dashboardsType: data
+              value: New node
+          ColumnsConfiguration:
+          - Field: sym
+            DisplayName: sym
+            WidthWeight: 100
+            MinWidthAbsolute: 100
+            TextAlign: left
+          - Field: time
+            DisplayName: time
+            Format: DateTime
+            TimeFormat: HH:mm:ss.SSSSSSSSS
+            WidthWeight: 200
+            MinWidthAbsolute: 200
+            TextAlign: right
+          - Field: price
+            DisplayName: price
+            Format: Formatted Number
+            Precision: 4
+            WidthWeight: 140
+            MinWidthAbsolute: 140
+            TextAlign: right
+          Style:
+            EvenRowBackgroundColorOverride: '#ffffff'
+            OddRowBackgroundColorOverride: '#f4f4f4'
+          Alignment:
+            paddingLeft: 0
+            paddingRight: 0
+            paddingTop: 0
+            paddingBottom: 0
+            innerPaddingLeft: 0
+            innerPaddingRight: 0
+            innerPaddingTop: 0
+            innerPaddingBottom: 0
+            titlePaddingLeft: 0
+            titlePaddingRight: 0
+          format:
+            tileBorderWidth: 0
+            tileBorderRounding: 0
+            tileBorderColor: '#000000'
+            tileBackgroundColor: '#000000'
+            tileTransparentBackground: true
+            tileShadow: false
+        containerId: null
+        components: []
+        widgets: []
+        definitionId: '21'
+        hasOnSettingsChange: true
+    relativeHeight: true
+    rowCount: 24
+    rowHeight: 25
+    colCount: 36
+    floatable: true
+    isDefault: true
+  showLoadingIndicators: true
+  themeSwitchable: true
+  transparentBackground: true
+  unsavedViewerPrompt: false
+  viewState:
+    _settings:
+      dashboardUser:
+        _viewType: true
+        _type: symbol
+        _default: ''
+      dashboardTimezone:
+        _viewType: true
+        _type: symbol
+        _default: ''
+      dashboardUrl:
+        _viewType: true
+        _type: string
+        _default: ''
+      dashboardTitle:
+        _viewType: true
+        _type: symbol
+        _default: ''
+      dashboardStartTimestamp:
+        _viewType: true
+        _type: timestamp
+        _default: NOW
+        _rolling: true
+      dashboardAvailableMemoryThreshold:
+        _viewType: true
+        _type: int
+        _default: 0
+    New node 2:
+      New node:
+        _viewType: true
+        _type: time
+        _default: NOW
+        _rolling: true
+  widgetsSpacing: 0
+  worksheetPadding: 10
+  popups: []
+  notifications: ''
+  version: v2.3.0
+  wasChanged: true
+  lastUpdateDate: '2026-02-10T11:48:09.705+00:00'
+  id: 8289176c-5d50-4158-96af-fd7030658337
+  creationDate: '2026-02-10T09:39:36.022+00:00'
+  thumb: ''
+  screenDetails:
+  - label: Screen 1
+    value: a08d3123-59c7-e5e0-2586-0886ec42ea97
+  saveTimestamp: null
+  permissionEntity: null
+  hostnameAccess: ''
+  hidePdfGlobalVS: false
+  hash: ''
+  isDemo: false
+  type: report
+  source: documents
+  access: ARWX
+  link: view#8289176c-5d50-4158-96af-fd7030658337
+  pkg_name: equities
+  pkg_id: 19bdac68-007c-4e35-a7ae-d3ed6aee2960
+  pkg_version: 0.0.1
+screenDetails:
+- label: Screen 1
+  value: a08d3123-59c7-e5e0-2586-0886ec42ea97
+thumb: ''
+creationDate: '2026-02-10T09:39:36.022+00:00'
+lastUpdateDate: '2026-02-10T11:48:09.705+00:00'

@@ -1,0 +1,40 @@
+# yaml-language-server: $schema=https://code.kx.com/insights/enterprise/packaging/schemas/package.json#/$defs/View
+uuid: d231ffab-02b2-4099-8a47-9fcbc6398600
+name: analytics
+data:
+  title: analytics
+  name: analytics
+  advancedCss: ''
+  borderBackground: '000000'
+  borderColor: '000000'
+  borderRounding: 0
+  borderShadow: false
+  borderSpacing: 0
+  borderWidth: 0
+  colCount: 36
+  cssClasses: ''
+  dashboardTheme: Light
+  data: {}
+  enableShareDashboard: false
+  floatable: true
+  relativeHeight: true
+  rowCount: 38
+  rowHeight: 12
+  saveViewerState: enabled
+  screens: []
+  showLoadingIndicators: true
+  themeSwitchable: true
+  transparentBackground: true
+  unsavedViewerPrompt: false
+  viewState: {}
+  widgetsSpacing: 0
+  worksheetPadding: 10
+  popups: []
+  notifications: ''
+  version: ''
+  wasChanged: false
+  lastUpdateDate: '2026-02-10T16:36:35.681+00:00'
+screenDetails: []
+thumb: ''
+creationDate: '2026-02-10T16:36:35.681+00:00'
+lastUpdateDate: '2026-02-10T16:36:35.681+00:00'
