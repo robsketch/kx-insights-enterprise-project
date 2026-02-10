@@ -3,10 +3,6 @@ uuid: 9236c4df-07b4-4d08-a4f6-87d2e877b0a9
 columns:
 - name: time
   type: timestamp
-- name: sym
-  type: symbol
-- name: minute
-  type: time
 - name: high
   type: float
 - name: low

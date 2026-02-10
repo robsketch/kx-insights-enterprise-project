@@ -7,7 +7,7 @@
                 "": "*"
             },
             "outputs": {
-                "e1771489-a792-4f77-8081-9f9e5b56d736": "*"
+                "0213c0fa-53cc-44a7-bd01-e82fc8779795": "*"
             },
             "config": {
                 "expr": {
@@ -16,7 +16,7 @@
                 },
                 "trigger": {
                     "mode": "timer",
-                    "period": "0D00:00:30.000000000",
+                    "period": "0D00:00:00.500000000",
                     "setStartTime": false,
                     "startTime": "0"
                 }
@@ -39,7 +39,7 @@
                             "": "*"
                         },
                         "outputs": {
-                            "e1771489-a792-4f77-8081-9f9e5b56d736": "*"
+                            "0213c0fa-53cc-44a7-bd01-e82fc8779795": "*"
                         },
                         "config": {
                             "expr": {
@@ -48,7 +48,7 @@
                             },
                             "trigger": {
                                 "mode": "timer",
-                                "period": "0D00:00:30.000000000",
+                                "period": "0D00:00:00.500000000",
                                 "setStartTime": false,
                                 "startTime": "0"
                             }
@@ -64,8 +64,8 @@
                     },
                     "id": "Expression",
                     "position": {
-                        "x": 45.199981689453125,
-                        "y": 124.59999084472656
+                        "x": 56.53354766195798,
+                        "y": 206.42232067615973
                     }
                 }
             }
@@ -74,7 +74,7 @@
             "id": "kdb Insights Database",
             "function": null,
             "inputs": {
-                "f4935310-12d8-4569-aac6-fb500c72374e": "*"
+                "142b7495-2731-481f-9d10-fc5a81f97cb5": "*"
             },
             "outputs": {
                 "": "*"
@@ -102,7 +102,7 @@
                         "id": "kdb Insights Database",
                         "function": null,
                         "inputs": {
-                            "f4935310-12d8-4569-aac6-fb500c72374e": "*"
+                            "142b7495-2731-481f-9d10-fc5a81f97cb5": "*"
                         },
                         "outputs": {
                             "": "*"
@@ -127,60 +127,8 @@
                     },
                     "id": "kdb Insights Database",
                     "position": {
-                        "x": 833.1999816894531,
-                        "y": 124.98495788574218
-                    }
-                }
-            }
-        },
-        {
-            "id": "JSON",
-            "function": null,
-            "inputs": {
-                "e1771489-a792-4f77-8081-9f9e5b56d736": "*"
-            },
-            "outputs": {
-                "c117a07d-c5fd-462a-bc1b-00cc3b3646b7": "*"
-            },
-            "config": {
-                "decodeEach": false
-            },
-            "metadata": {
-                "type": "decoder",
-                "plugin": "json.decode",
-                "params": [],
-                "initialState": null,
-                "stateful": false,
-                "version": 1,
-                "ui": {
-                    "color": "#76c398",
-                    "type": "json.decode",
-                    "version": "insights-1.15.0",
-                    "data": {
-                        "id": "JSON",
-                        "function": null,
-                        "inputs": {
-                            "e1771489-a792-4f77-8081-9f9e5b56d736": "*"
-                        },
-                        "outputs": {
-                            "c117a07d-c5fd-462a-bc1b-00cc3b3646b7": "*"
-                        },
-                        "config": {
-                            "decodeEach": false
-                        },
-                        "metadata": {
-                            "type": "decoder",
-                            "plugin": "json.decode",
-                            "params": [],
-                            "initialState": null,
-                            "stateful": false,
-                            "version": 1
-                        }
-                    },
-                    "id": "JSON",
-                    "position": {
-                        "x": 297.1999816894531,
-                        "y": 124.59999084472656
+                        "x": 1119.5331983271712,
+                        "y": 44.494975328595615
                     }
                 }
             }
@@ -189,10 +137,10 @@
             "id": "Apply Schema",
             "function": null,
             "inputs": {
-                "c117a07d-c5fd-462a-bc1b-00cc3b3646b7": "*"
+                "0beb301d-d506-4e94-b9c2-77050fc34547": "*"
             },
             "outputs": {
-                "f4935310-12d8-4569-aac6-fb500c72374e": "*"
+                "ce6c74b6-027b-4bdd-b65c-558b6ea1c928": "*"
             },
             "config": {
                 "inputType": "auto",
@@ -240,10 +188,10 @@
                         "id": "Apply Schema",
                         "function": null,
                         "inputs": {
-                            "c117a07d-c5fd-462a-bc1b-00cc3b3646b7": "*"
+                            "0beb301d-d506-4e94-b9c2-77050fc34547": "*"
                         },
                         "outputs": {
-                            "f4935310-12d8-4569-aac6-fb500c72374e": "*"
+                            "ce6c74b6-027b-4bdd-b65c-558b6ea1c928": "*"
                         },
                         "config": {
                             "inputType": "auto",
@@ -287,8 +235,452 @@
                     },
                     "id": "Apply Schema",
                     "position": {
-                        "x": 564.1999816894531,
-                        "y": 124.59999084472656
+                        "x": 585.9184740000151,
+                        "y": 117.27224453232463
+                    }
+                }
+            }
+        },
+        {
+            "id": "Split",
+            "function": null,
+            "inputs": {
+                "ce6c74b6-027b-4bdd-b65c-558b6ea1c928": "*"
+            },
+            "outputs": {
+                "142b7495-2731-481f-9d10-fc5a81f97cb5": "*",
+                "7aa269ec-179f-48c9-ba24-4716dad0b882": "*"
+            },
+            "config": {},
+            "metadata": {
+                "type": "operator",
+                "plugin": "split",
+                "params": [],
+                "initialState": null,
+                "stateful": false,
+                "version": 1,
+                "ui": {
+                    "color": "#ffae72",
+                    "type": "split",
+                    "version": "insights-1.15.0",
+                    "data": {
+                        "id": "Split",
+                        "function": null,
+                        "inputs": {
+                            "ce6c74b6-027b-4bdd-b65c-558b6ea1c928": "*"
+                        },
+                        "outputs": {
+                            "142b7495-2731-481f-9d10-fc5a81f97cb5": "*",
+                            "7aa269ec-179f-48c9-ba24-4716dad0b882": "*"
+                        },
+                        "config": {},
+                        "metadata": {
+                            "type": "operator",
+                            "plugin": "split",
+                            "params": [],
+                            "initialState": null,
+                            "stateful": false,
+                            "version": 1
+                        }
+                    },
+                    "id": "Split",
+                    "position": {
+                        "x": 840.7523393463372,
+                        "y": 117.43207415911951
+                    }
+                }
+            }
+        },
+        {
+            "id": "Subscriber",
+            "function": null,
+            "inputs": {
+                "7aa269ec-179f-48c9-ba24-4716dad0b882": "*"
+            },
+            "outputs": {
+                "": "*"
+            },
+            "config": {
+                "keyCol": [],
+                "publishFrequency": 500,
+                "cacheLimit": 2000,
+                "table": "trade"
+            },
+            "metadata": {
+                "type": "writer",
+                "plugin": "subscriber",
+                "params": [],
+                "initialState": null,
+                "stateful": false,
+                "version": 1,
+                "ui": {
+                    "color": "#f23a65",
+                    "type": "subscriber",
+                    "version": "insights-1.15.0",
+                    "data": {
+                        "id": "Subscriber",
+                        "function": null,
+                        "inputs": {
+                            "7aa269ec-179f-48c9-ba24-4716dad0b882": "*"
+                        },
+                        "outputs": {
+                            "": "*"
+                        },
+                        "config": {
+                            "keyCol": [],
+                            "publishFrequency": 500,
+                            "cacheLimit": 2000,
+                            "table": "trade"
+                        },
+                        "metadata": {
+                            "type": "writer",
+                            "plugin": "subscriber",
+                            "params": [],
+                            "initialState": null,
+                            "stateful": false,
+                            "version": 1
+                        }
+                    },
+                    "id": "Subscriber",
+                    "position": {
+                        "x": 1121.807524340964,
+                        "y": 183.4074696977643
+                    }
+                }
+            }
+        },
+        {
+            "id": "Split-1",
+            "function": null,
+            "inputs": {
+                "0213c0fa-53cc-44a7-bd01-e82fc8779795": "*"
+            },
+            "outputs": {
+                "0beb301d-d506-4e94-b9c2-77050fc34547": "*",
+                "c90c94a6-18f8-4f71-bb70-c53466436388": "*"
+            },
+            "config": {},
+            "metadata": {
+                "type": "operator",
+                "plugin": "split",
+                "params": [],
+                "initialState": null,
+                "stateful": false,
+                "version": 1,
+                "ui": {
+                    "color": "#ffae72",
+                    "type": "split",
+                    "version": "insights-1.15.0",
+                    "data": {
+                        "id": "Split-1",
+                        "function": null,
+                        "inputs": {
+                            "0213c0fa-53cc-44a7-bd01-e82fc8779795": "*"
+                        },
+                        "outputs": {
+                            "0beb301d-d506-4e94-b9c2-77050fc34547": "*",
+                            "c90c94a6-18f8-4f71-bb70-c53466436388": "*"
+                        },
+                        "config": {},
+                        "metadata": {
+                            "type": "operator",
+                            "plugin": "split",
+                            "params": [],
+                            "initialState": null,
+                            "stateful": false,
+                            "version": 1
+                        }
+                    },
+                    "id": "Split-1",
+                    "position": {
+                        "x": 328.82059437566386,
+                        "y": 206.41005342207708
+                    }
+                }
+            }
+        },
+        {
+            "id": "Timer Window",
+            "function": null,
+            "inputs": {
+                "c90c94a6-18f8-4f71-bb70-c53466436388": "*"
+            },
+            "outputs": {
+                "4b4c84da-aebf-4a5c-85e4-a38f45289a0a": "*"
+            },
+            "config": {
+                "skipEmptyWindows": false,
+                "acceptDictionaries": true,
+                "period": "0D00:00:10.000000000"
+            },
+            "metadata": {
+                "type": "window",
+                "plugin": "timerWindow",
+                "params": [],
+                "initialState": null,
+                "stateful": false,
+                "version": 1,
+                "ui": {
+                    "color": "#9bf2de",
+                    "type": "timerWindow",
+                    "version": "insights-1.15.0",
+                    "data": {
+                        "id": "Timer Window",
+                        "function": null,
+                        "inputs": {
+                            "c90c94a6-18f8-4f71-bb70-c53466436388": "*"
+                        },
+                        "outputs": {
+                            "4b4c84da-aebf-4a5c-85e4-a38f45289a0a": "*"
+                        },
+                        "config": {
+                            "skipEmptyWindows": false,
+                            "__showCountTrigger": false,
+                            "acceptDictionaries": true,
+                            "period": "0D00:00:10.000000000"
+                        },
+                        "metadata": {
+                            "type": "window",
+                            "plugin": "timerWindow",
+                            "params": [],
+                            "initialState": null,
+                            "stateful": false,
+                            "version": 1
+                        }
+                    },
+                    "id": "Timer Window",
+                    "position": {
+                        "x": 590.0831607086966,
+                        "y": 298.7756071761795
+                    }
+                }
+            }
+        },
+        {
+            "id": "Map",
+            "function": {
+                "format": "q",
+                "function": "// @param data {any} data from the previous node\n// @return {any} data to pass to the next node\n{[data]\n    select last time,\n      high:max price,\n      low:min price,\n      open:first price,\n      close:last price\n    from data\n    }"
+            },
+            "inputs": {
+                "4b4c84da-aebf-4a5c-85e4-a38f45289a0a": "*"
+            },
+            "outputs": {
+                "299e30f3-803c-4f87-94c9-fb12583deb2e": "*"
+            },
+            "config": {
+                "allowPartials": true
+            },
+            "metadata": {
+                "type": "operator",
+                "plugin": "map",
+                "params": [],
+                "initialState": null,
+                "stateful": false,
+                "version": 1,
+                "ui": {
+                    "color": "#ffae72",
+                    "type": "map",
+                    "version": "insights-1.15.0",
+                    "data": {
+                        "id": "Map",
+                        "function": {
+                            "format": "q",
+                            "function": "// @param data {any} data from the previous node\n// @return {any} data to pass to the next node\n{[data]\n    select last time,\n      high:max price,\n      low:min price,\n      open:first price,\n      close:last price\n    from data\n    }"
+                        },
+                        "inputs": {
+                            "4b4c84da-aebf-4a5c-85e4-a38f45289a0a": "*"
+                        },
+                        "outputs": {
+                            "299e30f3-803c-4f87-94c9-fb12583deb2e": "*"
+                        },
+                        "config": {
+                            "allowPartials": true
+                        },
+                        "metadata": {
+                            "type": "operator",
+                            "plugin": "map",
+                            "params": [],
+                            "initialState": null,
+                            "stateful": false,
+                            "version": 1
+                        }
+                    },
+                    "id": "Map",
+                    "position": {
+                        "x": 885.6529327218251,
+                        "y": 356.8339552501869
+                    }
+                }
+            }
+        },
+        {
+            "id": "kdb Insights Database-1",
+            "function": null,
+            "inputs": {
+                "37301b15-8e73-47ac-8a11-fe25f43c4089": "*"
+            },
+            "outputs": {
+                "": "*"
+            },
+            "config": {
+                "directWrite": false,
+                "deduplicate": true,
+                "retries": 60,
+                "retryWait": "0D00:00:03.000000000",
+                "assembly": "equities",
+                "table": "hloc"
+            },
+            "metadata": {
+                "type": "writer",
+                "plugin": "database.writer",
+                "params": [],
+                "initialState": null,
+                "stateful": false,
+                "version": 1,
+                "ui": {
+                    "color": "#f23a65",
+                    "type": "database.writer",
+                    "version": "insights-1.15.0",
+                    "data": {
+                        "id": "kdb Insights Database-1",
+                        "function": null,
+                        "inputs": {
+                            "37301b15-8e73-47ac-8a11-fe25f43c4089": "*"
+                        },
+                        "outputs": {
+                            "": "*"
+                        },
+                        "config": {
+                            "directWrite": false,
+                            "deduplicate": true,
+                            "__setTimeoutVal": false,
+                            "retries": 60,
+                            "retryWait": "0D00:00:03.000000000",
+                            "assembly": "equities",
+                            "table": "hloc"
+                        },
+                        "metadata": {
+                            "type": "writer",
+                            "plugin": "database.writer",
+                            "params": [],
+                            "initialState": null,
+                            "stateful": false,
+                            "version": 1
+                        }
+                    },
+                    "id": "kdb Insights Database-1",
+                    "position": {
+                        "x": 1394.9829862801623,
+                        "y": 301.4146229977254
+                    }
+                }
+            }
+        },
+        {
+            "id": "Subscriber-1",
+            "function": null,
+            "inputs": {
+                "0d3d2036-da06-4915-8126-11f83578b670": "*"
+            },
+            "outputs": {
+                "": "*"
+            },
+            "config": {
+                "keyCol": [],
+                "publishFrequency": 500,
+                "cacheLimit": 2000,
+                "table": "hloc"
+            },
+            "metadata": {
+                "type": "writer",
+                "plugin": "subscriber",
+                "params": [],
+                "initialState": null,
+                "stateful": false,
+                "version": 1,
+                "ui": {
+                    "color": "#f23a65",
+                    "type": "subscriber",
+                    "version": "insights-1.15.0",
+                    "data": {
+                        "id": "Subscriber-1",
+                        "function": null,
+                        "inputs": {
+                            "0d3d2036-da06-4915-8126-11f83578b670": "*"
+                        },
+                        "outputs": {
+                            "": "*"
+                        },
+                        "config": {
+                            "keyCol": [],
+                            "publishFrequency": 500,
+                            "cacheLimit": 2000,
+                            "table": "hloc"
+                        },
+                        "metadata": {
+                            "type": "writer",
+                            "plugin": "subscriber",
+                            "params": [],
+                            "initialState": null,
+                            "stateful": false,
+                            "version": 1
+                        }
+                    },
+                    "id": "Subscriber-1",
+                    "position": {
+                        "x": 1394.9829862801616,
+                        "y": 442.6019694504251
+                    }
+                }
+            }
+        },
+        {
+            "id": "Split-2",
+            "function": null,
+            "inputs": {
+                "299e30f3-803c-4f87-94c9-fb12583deb2e": "*"
+            },
+            "outputs": {
+                "37301b15-8e73-47ac-8a11-fe25f43c4089": "*",
+                "0d3d2036-da06-4915-8126-11f83578b670": "*"
+            },
+            "config": {},
+            "metadata": {
+                "type": "operator",
+                "plugin": "split",
+                "params": [],
+                "initialState": null,
+                "stateful": false,
+                "version": 1,
+                "ui": {
+                    "color": "#ffae72",
+                    "type": "split",
+                    "version": "insights-1.15.0",
+                    "data": {
+                        "id": "Split-2",
+                        "function": null,
+                        "inputs": {
+                            "299e30f3-803c-4f87-94c9-fb12583deb2e": "*"
+                        },
+                        "outputs": {
+                            "37301b15-8e73-47ac-8a11-fe25f43c4089": "*",
+                            "0d3d2036-da06-4915-8126-11f83578b670": "*"
+                        },
+                        "config": {},
+                        "metadata": {
+                            "type": "operator",
+                            "plugin": "split",
+                            "params": [],
+                            "initialState": null,
+                            "stateful": false,
+                            "version": 1
+                        }
+                    },
+                    "id": "Split-2",
+                    "position": {
+                        "x": 1142.9569753225392,
+                        "y": 362.1119868932784
                     }
                 }
             }
@@ -296,47 +688,166 @@
     ],
     "edges": [
         {
-            "destination": "JSON",
-            "source": "Expression",
-            "edge": "e1771489-a792-4f77-8081-9f9e5b56d736",
+            "destination": "Split",
+            "source": "Apply Schema",
+            "edge": "ce6c74b6-027b-4bdd-b65c-558b6ea1c928",
             "metadata": {
                 "ui": {
-                    "id": "e1771489-a792-4f77-8081-9f9e5b56d736",
-                    "source": "Expression",
-                    "target": "JSON",
+                    "id": "ce6c74b6-027b-4bdd-b65c-558b6ea1c928",
+                    "source": "Apply Schema",
+                    "target": "Split",
                     "sourceHandle": "0",
                     "targetHandle": "0",
-                    "animated": true
-                }
-            },
-            "valid": true
-        },
-        {
-            "destination": "Apply Schema",
-            "source": "JSON",
-            "edge": "c117a07d-c5fd-462a-bc1b-00cc3b3646b7",
-            "metadata": {
-                "ui": {
-                    "id": "c117a07d-c5fd-462a-bc1b-00cc3b3646b7",
-                    "source": "JSON",
-                    "target": "Apply Schema",
-                    "sourceHandle": "0",
-                    "targetHandle": "0",
-                    "animated": true
+                    "animated": false,
+                    "type": "wideBezier"
                 }
             },
             "valid": true
         },
         {
             "destination": "kdb Insights Database",
-            "source": "Apply Schema",
-            "edge": "f4935310-12d8-4569-aac6-fb500c72374e",
+            "source": "Split",
+            "edge": "142b7495-2731-481f-9d10-fc5a81f97cb5",
             "metadata": {
                 "ui": {
-                    "id": "f4935310-12d8-4569-aac6-fb500c72374e",
-                    "source": "Apply Schema",
+                    "id": "142b7495-2731-481f-9d10-fc5a81f97cb5",
+                    "source": "Split",
                     "target": "kdb Insights Database",
                     "sourceHandle": "0",
+                    "targetHandle": "0",
+                    "animated": false,
+                    "type": "wideBezier"
+                }
+            },
+            "valid": true
+        },
+        {
+            "destination": "Subscriber",
+            "source": "Split",
+            "edge": "7aa269ec-179f-48c9-ba24-4716dad0b882",
+            "metadata": {
+                "ui": {
+                    "id": "7aa269ec-179f-48c9-ba24-4716dad0b882",
+                    "source": "Split",
+                    "target": "Subscriber",
+                    "sourceHandle": "1",
+                    "targetHandle": "0",
+                    "animated": false,
+                    "type": "wideBezier"
+                }
+            },
+            "valid": true
+        },
+        {
+            "destination": "Apply Schema",
+            "source": "Split-1",
+            "edge": "0beb301d-d506-4e94-b9c2-77050fc34547",
+            "metadata": {
+                "ui": {
+                    "id": "0beb301d-d506-4e94-b9c2-77050fc34547",
+                    "source": "Split-1",
+                    "target": "Apply Schema",
+                    "sourceHandle": "0",
+                    "targetHandle": "0",
+                    "animated": false,
+                    "type": "wideBezier"
+                }
+            },
+            "valid": true
+        },
+        {
+            "destination": "Split-1",
+            "source": "Expression",
+            "edge": "0213c0fa-53cc-44a7-bd01-e82fc8779795",
+            "metadata": {
+                "ui": {
+                    "id": "0213c0fa-53cc-44a7-bd01-e82fc8779795",
+                    "source": "Expression",
+                    "target": "Split-1",
+                    "sourceHandle": "0",
+                    "targetHandle": "0",
+                    "animated": false,
+                    "type": "wideBezier"
+                }
+            },
+            "valid": true
+        },
+        {
+            "destination": "Timer Window",
+            "source": "Split-1",
+            "edge": "c90c94a6-18f8-4f71-bb70-c53466436388",
+            "metadata": {
+                "ui": {
+                    "id": "c90c94a6-18f8-4f71-bb70-c53466436388",
+                    "source": "Split-1",
+                    "target": "Timer Window",
+                    "sourceHandle": "1",
+                    "targetHandle": "0",
+                    "animated": false,
+                    "type": "wideBezier"
+                }
+            },
+            "valid": true
+        },
+        {
+            "destination": "Map",
+            "source": "Timer Window",
+            "edge": "4b4c84da-aebf-4a5c-85e4-a38f45289a0a",
+            "metadata": {
+                "ui": {
+                    "id": "4b4c84da-aebf-4a5c-85e4-a38f45289a0a",
+                    "source": "Timer Window",
+                    "target": "Map",
+                    "sourceHandle": "0",
+                    "targetHandle": "0",
+                    "animated": false,
+                    "type": "wideBezier"
+                }
+            },
+            "valid": true
+        },
+        {
+            "destination": "Split-2",
+            "source": "Map",
+            "edge": "299e30f3-803c-4f87-94c9-fb12583deb2e",
+            "metadata": {
+                "ui": {
+                    "id": "299e30f3-803c-4f87-94c9-fb12583deb2e",
+                    "source": "Map",
+                    "target": "Split-2",
+                    "sourceHandle": "0",
+                    "targetHandle": "0",
+                    "animated": true
+                }
+            },
+            "valid": true
+        },
+        {
+            "destination": "kdb Insights Database-1",
+            "source": "Split-2",
+            "edge": "37301b15-8e73-47ac-8a11-fe25f43c4089",
+            "metadata": {
+                "ui": {
+                    "id": "37301b15-8e73-47ac-8a11-fe25f43c4089",
+                    "source": "Split-2",
+                    "target": "kdb Insights Database-1",
+                    "sourceHandle": "0",
+                    "targetHandle": "0",
+                    "animated": true
+                }
+            },
+            "valid": true
+        },
+        {
+            "destination": "Subscriber-1",
+            "source": "Split-2",
+            "edge": "0d3d2036-da06-4915-8126-11f83578b670",
+            "metadata": {
+                "ui": {
+                    "id": "0d3d2036-da06-4915-8126-11f83578b670",
+                    "source": "Split-2",
+                    "target": "Subscriber-1",
+                    "sourceHandle": "1",
                     "targetHandle": "0",
                     "animated": true
                 }
@@ -346,6 +857,6 @@
     ],
     "code": {
         "format": "q",
-        "function": "// define some starting prices for dummy feed via an expression reader\r\n\r\nuniverse:(!) . flip \r\n    (\r\n    (`AAPL;200.);\r\n    (`MSFT;150.);\r\n    (`NVDA;180.);\r\n    (`AMD;190.)\r\n    );\r\n\r\n// create a table of distinct records for each instrument\r\n\r\ndrift:{(rand -1 1)*0.01*1?1.}\r\n\r\n// simple function to generate data with a slight drift up/or down randomly\r\ngenData:{[]\r\n  sym:enlist rand key universe;\r\n  price:universe[sym]*(1-drift[]);\r\n  size:1?100*1+til 10;\r\n  side:1?`BUY`SELL;\r\n  data:.j.j flip (!) . flip (\r\n    (`time;.z.P);\r\n    (`sym;sym);\r\n    (`price;price);\r\n    (`size;size);\r\n    (`side;side)\r\n    );\r\n  @[`universe;sym;:;first price];\r\n  :data;\r\n  };\r\n"
+        "function": "// define some starting prices for dummy feed via an expression reader\r\n\r\nprice:200;\r\nsym:`AAPL;\r\n\r\n// create a table of distinct records for each instrument\r\n\r\ndrift:{(rand -1 1)*0.01*1?1.}\r\n\r\n// simple function to generate data with a slight drift up/or down randomly\r\ngenData:{[]\r\n  p:price*(1-drift[]);\r\n  size:1?100*1+til 10;\r\n  side:1?`BUY`SELL;\r\n  data:flip (!) . flip (\r\n    (`time;.z.P);\r\n    (`sym;sym);\r\n    (`price;p);\r\n    (`size;size);\r\n    (`side;side)\r\n    );\r\n  `price set p;\r\n  :data;\r\n  };\r\n"
     }
 }

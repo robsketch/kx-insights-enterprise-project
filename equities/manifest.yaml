@@ -28,4 +28,6 @@ views:
     file: views/equities.yaml
   analytics:
     file: views/analytics.yaml
+  HLOC:
+    file: views/HLOC.yaml
 patches: []

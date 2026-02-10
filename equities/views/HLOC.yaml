@@ -1,0 +1,490 @@
+# yaml-language-server: $schema=https://code.kx.com/insights/enterprise/packaging/schemas/package.json#/$defs/View
+uuid: c1700083-1d9b-4837-b259-a2cb193cd2e7
+name: HLOC
+data:
+  title: HLOC
+  name: HLOC
+  advancedCss: ''
+  borderBackground: '000000'
+  borderColor: '000000'
+  borderRounding: 0
+  borderShadow: false
+  borderSpacing: 0
+  borderWidth: 0
+  colCount: 36
+  cssClasses: ''
+  dashboardTheme: Light
+  data:
+    trade:
+      _autoExec: true
+      _autoExecute: true
+      _columns:
+      - time
+      - sym
+      - price
+      - size
+      - side
+      _dataType: insightsStreaming
+      _dataSource: kdb
+      _connection: ''
+      _connection_Viewstate: ''
+      _mappings:
+        key: time
+        mappings: {}
+        value: sym
+      _maxRows: 2000
+      _subscriptionType: streaming
+      _subscriptionInterval: 3
+      _layout:
+      - isExpanded: true
+        weight: 2
+      - isExpanded: false
+        weight: 1
+      - isExpanded: false
+        weight: 1
+      - isExpanded: true
+        weight: 0
+      - isExpanded: false
+        weight: 2
+      _streamingParameters:
+      - id: pipeline
+        name: pipeline
+        type: symbol
+        description: ''
+        required: true
+        value: equities-equities-rt
+        isViewState: false
+        useRollingSyntax: false
+      - id: pipelineId
+        name: pipelineId
+        type: symbol
+        description: ''
+        required: false
+        value: equities-equities-rt
+        isViewState: false
+        useRollingSyntax: false
+      - id: pipelineName
+        name: pipelineName
+        type: symbol
+        description: ''
+        required: false
+        value: equities-rt
+        isViewState: false
+        useRollingSyntax: false
+      - id: table
+        name: table
+        type: symbol
+        description: ''
+        required: true
+        value: trade
+        isViewState: false
+        useRollingSyntax: false
+      - id: filters
+        name: filters
+        type: symbol
+        description: ''
+        required: false
+        value: ''
+        isViewState: false
+        useRollingSyntax: false
+      - id: version
+        name: version
+        type: symbol
+        description: ''
+        required: false
+        value: v1
+        isViewState: false
+        useRollingSyntax: false
+      _subscriptionKey: ''
+      _isStreamingSubscription: false
+    hloc:
+      _autoExec: true
+      _autoExecute: true
+      _columns:
+      - time
+      - high
+      - low
+      - open
+      - close
+      _dataType: insightsStreaming
+      _dataSource: kdb
+      _connection: ''
+      _connection_Viewstate: ''
+      _mappings:
+        key: time
+        mappings: {}
+        value: high
+      _maxRows: 2000
+      _subscriptionType: streaming
+      _subscriptionInterval: 3
+      _layout:
+      - isExpanded: true
+        weight: 2
+      - isExpanded: false
+        weight: 1
+      - isExpanded: false
+        weight: 1
+      - isExpanded: true
+        weight: 0
+      - isExpanded: false
+        weight: 2
+      _streamingParameters:
+      - id: pipeline
+        name: pipeline
+        type: symbol
+        description: ''
+        required: true
+        value: equities-equities-rt
+        isViewState: false
+        useRollingSyntax: false
+      - id: pipelineId
+        name: pipelineId
+        type: symbol
+        description: ''
+        required: false
+        value: equities-equities-rt
+        isViewState: false
+        useRollingSyntax: false
+      - id: pipelineName
+        name: pipelineName
+        type: symbol
+        description: ''
+        required: false
+        value: equities-rt
+        isViewState: false
+        useRollingSyntax: false
+      - id: table
+        name: table
+        type: symbol
+        description: ''
+        required: true
+        value: hloc
+        isViewState: false
+        useRollingSyntax: false
+      - id: filters
+        name: filters
+        type: symbol
+        description: ''
+        required: false
+        value: ''
+        isViewState: false
+        useRollingSyntax: false
+      - id: version
+        name: version
+        type: symbol
+        description: ''
+        required: false
+        value: v1
+        isViewState: false
+        useRollingSyntax: false
+      _subscriptionKey: ''
+      _isStreamingSubscription: false
+  enableShareDashboard: false
+  floatable: true
+  relativeHeight: true
+  rowCount: 24
+  rowHeight: 25
+  saveViewerState: enabled
+  screens:
+  - id: c8eec064-df11-0b5f-d79b-f6bec4ae2d43
+    name: Screen 1
+    thumb: null
+    widgets:
+    - id: e7d65436-324a-d307-1338-75e8568084bc
+      layout:
+        row: 13
+        column: 2
+        rowSpan: 11
+        colSpan: 20
+      component:
+        id: 9b3bf5cf-20f3-29b0-2926-2acf662c4caf
+        key: Datagrid
+        options:
+          version: v2.11.0
+          datagridPossibleColumns:
+          - time
+          - sym
+          - price
+          - size
+          - side
+          datagridPossibleHeaderColumns:
+          - none
+          datagridPossibleColumnsWithItself:
+          - <this>
+          - time
+          - sym
+          - price
+          - size
+          - side
+          selectedColumnPossibleValues:
+          - time
+          - sym
+          - price
+          - size
+          - side
+          highlightTargetPossibleValues:
+          - time
+          - sym
+          - price
+          - size
+          - side
+          - '*'
+          sortingPossibleValues:
+          - ''
+          - time
+          - sym
+          - price
+          - size
+          - side
+          footerPossibleValues:
+          - None
+          - Average
+          - Count
+          - Sum
+          - WeightedAverage
+          Basics:
+            Data:
+              _dashboardsType: data
+              value: trade
+          ColumnsConfiguration:
+          - Field: time
+            DisplayName: time
+            Format: DateTime
+            TimeFormat: HH:mm:ss.SSSSSSSSS
+            WidthWeight: 200
+            MinWidthAbsolute: 200
+            TextAlign: right
+          - Field: sym
+            DisplayName: sym
+            WidthWeight: 100
+            MinWidthAbsolute: 100
+            TextAlign: left
+          - Field: price
+            DisplayName: price
+            Format: Formatted Number
+            Precision: 4
+            WidthWeight: 140
+            MinWidthAbsolute: 140
+            TextAlign: right
+          - Field: size
+            DisplayName: size
+            Format: Formatted Number
+            Precision: 0
+            WidthWeight: 165
+            MinWidthAbsolute: 165
+            TextAlign: right
+          - Field: side
+            DisplayName: side
+            WidthWeight: 100
+            MinWidthAbsolute: 100
+            TextAlign: left
+          Style:
+            EvenRowBackgroundColorOverride: '#ffffff'
+            OddRowBackgroundColorOverride: '#f4f4f4'
+          Alignment:
+            paddingLeft: 0
+            paddingRight: 0
+            paddingTop: 0
+            paddingBottom: 0
+            innerPaddingLeft: 0
+            innerPaddingRight: 0
+            innerPaddingTop: 0
+            innerPaddingBottom: 0
+            titlePaddingLeft: 0
+            titlePaddingRight: 0
+          format:
+            tileBorderWidth: 0
+            tileBorderRounding: 0
+            tileBorderColor: '#000000'
+            tileBackgroundColor: '#000000'
+            tileTransparentBackground: true
+            tileShadow: false
+        containerId: null
+        components: []
+        widgets: []
+        definitionId: '21'
+        hasOnSettingsChange: true
+    - id: c44cb4cf-dfe6-6f58-2b06-576c8610872a
+      layout:
+        row: 0
+        column: 1
+        rowSpan: 12
+        colSpan: 22
+      component:
+        id: 058f3aa3-bf66-bf97-11b3-3e6cab7bad4b
+        key: ChartJS
+        options:
+          Basics:
+            Name: 'AAPL real-time '
+          Layers:
+          - _Hidden:
+              _Type: Candlestick
+              _Index: 0
+              _LayerId: layer_8977
+              _PossibleColumns:
+              - time
+              - high
+              - low
+              - open
+              - close
+              _PossibleColumnsWithItself:
+              - <this>
+              - time
+              - high
+              - low
+              - open
+              - close
+              _PossibleColumnsWithXYKey:
+              - <thisX>
+              - <thisY>
+              - <thisName>
+              - time
+              - high
+              - low
+              - open
+              - close
+              _PossibleRadius:
+              - Fixed Size
+              - time
+              - high
+              - low
+              - open
+              - close
+              _PossibleXAxes:
+              - XAxis 1
+              _PossibleYAxes:
+              - YAxis 1
+            Basics:
+              LegendLabelColor: ''
+              Name: OHLC
+              BorderWidth: 0
+              Data:
+                _dashboardsType: data
+                value: hloc
+            Axes:
+              XAxisData: time
+              XAxisID: XAxis 1
+              YAxisID: YAxis 1
+              Close: close
+              High: high
+              Low: low
+              Open: open
+            Labels:
+              Font:
+                Bold: false
+                Size: 12
+          Legend:
+            LabelColor: '#000000'
+            LegendLayerThreshold: 5
+          Style:
+            palettes: ' '
+          XAxes:
+          - _Hidden:
+              _Type: category
+              _AxisId: axis_6526
+              _Index: 0
+              _Label: XAxis 1
+            GridLines:
+              GridLinesColor: '#000000'
+            Labels:
+              FontColor: '#000000'
+              MaxWidth: 0
+              DateFormat: kk:mm:ss
+          YAxes:
+          - _Hidden:
+              _Type: linear
+              _AxisId: axis_6530
+              _Index: 0
+              _Label: YAxis 1
+            GridLines:
+              GridLinesColor: '#000000'
+            Labels:
+              FontColor: '#000000'
+              MaxWidth: 0
+              _ReverseCache: false
+              DateFormat: YYYY-MM-DD
+            Range:
+              UseMinMax: true
+              UseMinMaxReset: false
+              UseDataRange: true
+          format:
+            widgetTitle: AAPL Real-Time OHLC
+          version: v2.8.0
+        containerId: null
+        components: []
+        widgets: []
+        definitionId: '1007'
+        hasOnSettingsChange: true
+    relativeHeight: true
+    rowCount: 24
+    rowHeight: 25
+    colCount: 36
+    floatable: true
+    isDefault: true
+  showLoadingIndicators: true
+  themeSwitchable: true
+  transparentBackground: true
+  unsavedViewerPrompt: false
+  viewState:
+    _settings:
+      dashboardUser:
+        _viewType: true
+        _type: symbol
+        _default: ''
+      dashboardTimezone:
+        _viewType: true
+        _type: symbol
+        _default: ''
+      dashboardUrl:
+        _viewType: true
+        _type: string
+        _default: ''
+      dashboardTitle:
+        _viewType: true
+        _type: symbol
+        _default: ''
+      dashboardStartTimestamp:
+        _viewType: true
+        _type: timestamp
+        _default: ''
+        _rolling: true
+      dashboardAvailableMemoryThreshold:
+        _viewType: true
+        _type: int
+        _default: 0
+    New node:
+      _viewType: true
+      _type: float
+      _default: ''
+  widgetsSpacing: 0
+  worksheetPadding: 10
+  popups: []
+  notifications: ''
+  version: v2.3.0
+  wasChanged: false
+  lastUpdateDate: '2026-02-10T18:54:24.182+00:00'
+  id: c1700083-1d9b-4837-b259-a2cb193cd2e7
+  creationDate: '2026-02-10T18:27:13.026+00:00'
+  thumb: ''
+  screenDetails:
+  - label: Screen 1
+    value: c8eec064-df11-0b5f-d79b-f6bec4ae2d43
+  saveTimestamp: null
+  permissionEntity: null
+  hostnameAccess: ''
+  hidePdfGlobalVS: false
+  hash: c1700083-1d9b-4837-b259-a2cb193cd2e7
+  isDemo: false
+  type: report
+  source: system
+  access: ARWX
+  link: view#c1700083-1d9b-4837-b259-a2cb193cd2e7
+  pkg_name: equities
+  pkg_id: 19bdac68-007c-4e35-a7ae-d3ed6aee2960
+  pkg_version: 0.0.1
+screenDetails:
+- label: Screen 1
+  value: c8eec064-df11-0b5f-d79b-f6bec4ae2d43
+thumb: ''
+creationDate: '2026-02-10T18:27:13.026+00:00'
+lastUpdateDate: '2026-02-10T18:54:24.182+00:00'
