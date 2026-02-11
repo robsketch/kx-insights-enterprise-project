@@ -24,9 +24,9 @@ The name of the package is called 'equities' -- the package will be the main con
 # Database
 The database is called 'equities' and contains 3 tables:
 - trade: raw trade data for AAPL.
-- static: some static data information for a few securities, including AAPL.
+- static: some historical OHLC data saved as a splayed table.
 - hloc: High/Low/Open/Close analytics for AAPL.
-<img width="1284" height="321" alt="image" src="https://github.com/user-attachments/assets/6a6b4061-31f3-4a51-bb9f-aab7367a4dde" />
+<img width="1115" height="302" alt="image" src="https://github.com/user-attachments/assets/72c83b96-469b-418a-9fdf-386c87dd163d" />
 
 # Pipelines
 This package contains 2 pipelines:
@@ -35,8 +35,8 @@ This package contains 2 pipelines:
 This pipeline writes the raw data to a kdb insights database, and splits off to utilize a timer window to generate HLOC stats with a 10 second interval.
 These HLOC stats are then also written to a kdb insights database as a partitioned table.
 
-3. A simple pipeline called 'static' to generate and write some simple static data to a kdb Insights Database for some securities.
-<img width="2227" height="786" alt="image" src="https://github.com/user-attachments/assets/1c38be18-315d-4616-96d4-f2bc57cfea09" />
+2. A simple pipeline called 'static' to generate read historical OHCL data from KX's industry example. I adjusted the data via map to make some dummy data for AAPL.
+<img width="1392" height="780" alt="image" src="https://github.com/user-attachments/assets/ffdb85c3-f9a9-4819-9452-df071925d0d3" />
 
 
 # Scratchpad
@@ -45,6 +45,7 @@ A scratchpad was used to explore the dummy data, and generate a query to generat
 
 # Views
 I utilized the subscriber nodes to generate real-time views of the HLOC data as a candlestick canvas chart, along with some raw trades in a table.
-<img width="2251" height="1147" alt="image" src="https://github.com/user-attachments/assets/1d2cffd6-10c6-497c-bd65-77ccb4942b56" />
+<img width="2242" height="1206" alt="image" src="https://github.com/user-attachments/assets/65bf5353-7c9c-49a4-aceb-40bd5f361093" />
+
 
 
