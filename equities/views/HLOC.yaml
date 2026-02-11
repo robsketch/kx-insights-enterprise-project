@@ -16,8 +16,9 @@ data:
   dashboardTheme: Light
   data:
     trade:
-      _autoExec: true
+      _pagingType: NONE
       _autoExecute: true
+      _autoExec: true
       _columns:
       - time
       - sym
@@ -32,7 +33,7 @@ data:
         key: time
         mappings: {}
         value: sym
-      _maxRows: 2000
+      _maxRows: '100'
       _subscriptionType: streaming
       _subscriptionInterval: 3
       _layout:
@@ -98,8 +99,9 @@ data:
       _subscriptionKey: ''
       _isStreamingSubscription: false
     hloc:
-      _autoExec: true
+      _pagingType: NONE
       _autoExecute: true
+      _autoExec: true
       _columns:
       - time
       - high
@@ -114,7 +116,7 @@ data:
         key: time
         mappings: {}
         value: high
-      _maxRows: 2000
+      _maxRows: '100'
       _subscriptionType: streaming
       _subscriptionInterval: 3
       _layout:
@@ -179,6 +181,235 @@ data:
         useRollingSyntax: false
       _subscriptionKey: ''
       _isStreamingSubscription: false
+      _selectedAnalytic: getData
+    static:
+      _pagingType: NONE
+      _autoExecute: true
+      _autoExec: true
+      _columns: []
+      _dataType: api
+      _dataSource: kdb
+      _connection: ''
+      _connection_Viewstate: ''
+      _mappings: {}
+      _maxRows: 2000
+      _subscriptionType: static
+      _subscriptionInterval: 3
+      _layout:
+      - isExpanded: true
+        weight: 2
+      - isExpanded: false
+        weight: 1
+      - isExpanded: false
+        weight: 1
+      - isExpanded: true
+        weight: 1
+      - isExpanded: false
+        weight: 2
+      _selectedAnalytic: getData
+      _analyticParams:
+      - id: table
+        name: table
+        type: symbol
+        description: Table to select from.
+        required: true
+        value: static
+        isViewState: false
+        useRollingSyntax: false
+      - id: startTS
+        name: startTS
+        type: timestamp
+        description: Inclusive start time for period of interest.
+        required: false
+        value: '2026-02-11T09:39:00.000000000Z'
+        isViewState: false
+        useRollingSyntax: false
+      - id: endTS
+        name: endTS
+        type: timestamp
+        description: Exclusive end time for period of interest.
+        required: false
+        value: '2026-02-11T09:39:00.000000000Z'
+        isViewState: false
+        useRollingSyntax: false
+      - id: filter
+        name: filter
+        type: list
+        description: Custom filter.
+        required: false
+        value: []
+        isViewState: false
+        useRollingSyntax: false
+      - id: groupBy
+        name: groupBy
+        type: list
+        description: Column(s) to determine aggregation grouping
+        required: false
+        value: []
+        isViewState: false
+        useRollingSyntax: false
+      - id: agg
+        name: agg
+        type: list
+        description: Column(s) to return or aggregations to perform (where ` returns
+          all columns).
+        required: false
+        value: []
+        isViewState: false
+        useRollingSyntax: false
+      - id: sortCols
+        name: sortCols
+        type: list
+        description: Column names to sort response payload on.
+        required: false
+        value: []
+        isViewState: false
+        useRollingSyntax: false
+      - id: limit
+        name: limit
+        type: list
+        description: Limit parameter.
+        required: false
+        value:
+        - '0'
+        - '2000'
+        - 'on'
+        isViewState: false
+        useRollingSyntax: false
+      - id: fill
+        name: fill
+        type: symbol
+        description: Fills option to apply to null data
+        required: false
+        value: ''
+        isViewState: false
+        useRollingSyntax: false
+      - id: temporality
+        name: temporality
+        type: symbol
+        description: How to interpret time range, as continuous or as slice
+        required: false
+        value: ''
+        isViewState: false
+        useRollingSyntax: false
+      - id: scope
+        name: scope
+        type: dict
+        description: Provides a distinguished request parameter that is used in routing
+          decisions
+        required: false
+        isViewState: false
+        useRollingSyntax: false
+      - id: labels
+        name: labels
+        type: list
+        description: label pairs
+        required: false
+        value: []
+        isViewState: false
+        useRollingSyntax: false
+      _analyticParameters:
+      - id: table
+        name: table
+        type: symbol
+        description: Table to select from.
+        required: true
+        value: static
+        isViewState: false
+        useRollingSyntax: false
+      - id: startTS
+        name: startTS
+        type: timestamp
+        description: Inclusive start time for period of interest.
+        required: false
+        value: '2026-02-11T09:39:00.000000000Z'
+        isViewState: false
+        useRollingSyntax: false
+      - id: endTS
+        name: endTS
+        type: timestamp
+        description: Exclusive end time for period of interest.
+        required: false
+        value: '2026-02-11T09:39:00.000000000Z'
+        isViewState: false
+        useRollingSyntax: false
+      - id: filter
+        name: filter
+        type: list
+        description: Custom filter.
+        required: false
+        value: []
+        isViewState: false
+        useRollingSyntax: false
+      - id: groupBy
+        name: groupBy
+        type: list
+        description: Column(s) to determine aggregation grouping
+        required: false
+        value: []
+        isViewState: false
+        useRollingSyntax: false
+      - id: agg
+        name: agg
+        type: list
+        description: Column(s) to return or aggregations to perform (where ` returns
+          all columns).
+        required: false
+        value: []
+        isViewState: false
+        useRollingSyntax: false
+      - id: sortCols
+        name: sortCols
+        type: list
+        description: Column names to sort response payload on.
+        required: false
+        value: []
+        isViewState: false
+        useRollingSyntax: false
+      - id: limit
+        name: limit
+        type: list
+        description: Limit parameter.
+        required: false
+        value:
+        - '0'
+        - '2000'
+        - 'on'
+        isViewState: false
+        useRollingSyntax: false
+      - id: fill
+        name: fill
+        type: symbol
+        description: Fills option to apply to null data
+        required: false
+        value: ''
+        isViewState: false
+        useRollingSyntax: false
+      - id: temporality
+        name: temporality
+        type: symbol
+        description: How to interpret time range, as continuous or as slice
+        required: false
+        value: ''
+        isViewState: false
+        useRollingSyntax: false
+      - id: scope
+        name: scope
+        type: dict
+        description: Provides a distinguished request parameter that is used in routing
+          decisions
+        required: false
+        isViewState: false
+        useRollingSyntax: false
+      - id: labels
+        name: labels
+        type: list
+        description: label pairs
+        required: false
+        value: []
+        isViewState: false
+        useRollingSyntax: false
+      _subscriptionKey: ''
   enableShareDashboard: false
   floatable: true
   relativeHeight: true
@@ -293,6 +524,7 @@ data:
             titlePaddingLeft: 0
             titlePaddingRight: 0
           format:
+            widgetTitle: AAPL Real-Time Price
             tileBorderWidth: 0
             tileBorderRounding: 0
             tileBorderColor: '#000000'
@@ -392,21 +624,21 @@ data:
               DateFormat: kk:mm:ss
           YAxes:
           - _Hidden:
-              _Type: linear
               _AxisId: axis_6530
               _Index: 0
               _Label: YAxis 1
+              _Type: linear
             GridLines:
               GridLinesColor: '#000000'
             Labels:
-              FontColor: '#000000'
               MaxWidth: 0
               _ReverseCache: false
+              FontColor: '#000000'
               DateFormat: YYYY-MM-DD
             Range:
+              UseDataRange: true
               UseMinMax: true
               UseMinMaxReset: false
-              UseDataRange: true
           format:
             widgetTitle: AAPL Real-Time OHLC
           version: v2.8.0
@@ -414,6 +646,107 @@ data:
         components: []
         widgets: []
         definitionId: '1007'
+        hasOnSettingsChange: true
+    - id: 68a01982-9a27-5938-8e3c-4e631b288648
+      layout:
+        row: 1
+        column: 24
+        rowSpan: 10
+        colSpan: 11
+      component:
+        id: 084c9cbf-e9f2-c066-ffe5-b6145b8906e5
+        key: Datagrid
+        options:
+          version: v2.11.0
+          datagridPossibleColumns:
+          - sym
+          - IPOdate
+          - companyName
+          - previousClose
+          datagridPossibleHeaderColumns:
+          - none
+          datagridPossibleColumnsWithItself:
+          - <this>
+          - sym
+          - IPOdate
+          - companyName
+          - previousClose
+          selectedColumnPossibleValues:
+          - sym
+          - IPOdate
+          - companyName
+          - previousClose
+          highlightTargetPossibleValues:
+          - sym
+          - IPOdate
+          - companyName
+          - previousClose
+          - '*'
+          sortingPossibleValues:
+          - ''
+          - sym
+          - IPOdate
+          - companyName
+          - previousClose
+          footerPossibleValues:
+          - None
+          - Average
+          - Count
+          - Sum
+          - WeightedAverage
+          Basics:
+            Data:
+              _dashboardsType: data
+              value: static
+          ColumnsConfiguration:
+          - Field: sym
+            DisplayName: sym
+            WidthWeight: 100
+            MinWidthAbsolute: 100
+            TextAlign: left
+          - Field: IPOdate
+            DisplayName: IPOdate
+            Format: Date
+            WidthWeight: 80
+            MinWidthAbsolute: 80
+            TextAlign: right
+          - Field: companyName
+            DisplayName: companyName
+            WidthWeight: 100
+            MinWidthAbsolute: 100
+          - Field: previousClose
+            DisplayName: previousClose
+            Format: Formatted Number
+            Precision: 4
+            WidthWeight: 140
+            MinWidthAbsolute: 140
+            TextAlign: right
+          Style:
+            EvenRowBackgroundColorOverride: '#ffffff'
+            OddRowBackgroundColorOverride: '#f4f4f4'
+          Alignment:
+            paddingLeft: 0
+            paddingRight: 0
+            paddingTop: 0
+            paddingBottom: 0
+            innerPaddingLeft: 0
+            innerPaddingRight: 0
+            innerPaddingTop: 0
+            innerPaddingBottom: 0
+            titlePaddingLeft: 0
+            titlePaddingRight: 0
+          format:
+            widgetTitle: Static Data
+            tileBorderWidth: 0
+            tileBorderRounding: 0
+            tileBorderColor: '#000000'
+            tileBackgroundColor: '#000000'
+            tileTransparentBackground: true
+            tileShadow: false
+        containerId: null
+        components: []
+        widgets: []
+        definitionId: '21'
         hasOnSettingsChange: true
     relativeHeight: true
     rowCount: 24
@@ -462,7 +795,7 @@ data:
   notifications: ''
   version: v2.3.0
   wasChanged: false
-  lastUpdateDate: '2026-02-10T18:54:24.182+00:00'
+  lastUpdateDate: '2026-02-11T09:46:32.985+00:00'
   id: c1700083-1d9b-4837-b259-a2cb193cd2e7
   creationDate: '2026-02-10T18:27:13.026+00:00'
   thumb: ''
@@ -473,10 +806,10 @@ data:
   permissionEntity: null
   hostnameAccess: ''
   hidePdfGlobalVS: false
-  hash: c1700083-1d9b-4837-b259-a2cb193cd2e7
+  hash: ''
   isDemo: false
   type: report
-  source: system
+  source: documents
   access: ARWX
   link: view#c1700083-1d9b-4837-b259-a2cb193cd2e7
   pkg_name: equities
@@ -487,4 +820,4 @@ screenDetails:
   value: c8eec064-df11-0b5f-d79b-f6bec4ae2d43
 thumb: ''
 creationDate: '2026-02-10T18:27:13.026+00:00'
-lastUpdateDate: '2026-02-10T18:54:24.182+00:00'
+lastUpdateDate: '2026-02-11T09:46:32.985+00:00'

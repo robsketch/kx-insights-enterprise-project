@@ -24,10 +24,6 @@ pipelines:
     file: pipelines/equities-rt.yaml
 router: router/router.yaml
 views:
-  equities:
-    file: views/equities.yaml
-  analytics:
-    file: views/analytics.yaml
   HLOC:
     file: views/HLOC.yaml
 patches: []
