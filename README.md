@@ -1,4 +1,4 @@
-# kx-insights-enterprise-project
+# KX Insights Enterprise Project
 This is an example of a KXI Enterprise project to achieve the official fundamentals certification from KX.
 
 # Overview
