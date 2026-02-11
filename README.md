@@ -1,5 +1,5 @@
 # kx-insights-enterprise-project
-An example of a KXI project to achieve the official fundamentals certification from KX
+This is an example of a KXI Enterprise project to achieve the official fundamentals certification from KX.
 
 # Overview
 In this example of using KXI Enterprise, I opted to generate a dummy feed of AAPL trade data to generate some HLOC interval stats.  There are two reasons for this choice:
@@ -7,7 +7,7 @@ In this example of using KXI Enterprise, I opted to generate a dummy feed of AAP
 2. Difficult to find good free real-time data online, so just making my own for this proof of concept.
 
 # Deploy
-Authenticate and set up your KXI instance on your machine via steps from the official KX docs, then run the following kxi pm push command to push this package to your environment:
+Authenticate and set up your KXI instance on your machine via the steps from the official KX docs, then run the following kxi pm push command to push this package to your environment:
 
 ```
 rob@sketchPC:~/kx-insights-enterprise-project$ ls -lrt
@@ -32,8 +32,10 @@ The database is called 'equities' and contains 3 tables:
 This package contains 2 pipelines:
 1. A pipeline called 'equities-rt' to consume and run analytics on raw AAPL trade data.
 <img width="2250" height="840" alt="image" src="https://github.com/user-attachments/assets/e5aa027e-c196-405b-945b-dc2d405784f9" />
+This pipeline writes the raw data to a kdb insights database, and splits off to utilize a timer window to generate HLOC stats with a 10 second interval.
+These HLOC stats are then also written to a kdb insights database as a partitioned table.
 
-2. A simple pipeline called 'static' to generate and write some simple static data to a kdb Insights Database for some securities.
+3. A simple pipeline called 'static' to generate and write some simple static data to a kdb Insights Database for some securities.
 <img width="2227" height="786" alt="image" src="https://github.com/user-attachments/assets/1c38be18-315d-4616-96d4-f2bc57cfea09" />
 
 
@@ -42,7 +44,7 @@ A scratchpad was used to explore the dummy data, and generate a query to generat
 <img width="2248" height="1208" alt="image" src="https://github.com/user-attachments/assets/3f18a07a-a606-4e6d-bec0-1d93d46973a8" />
 
 # Views
-I utilized the subscriber nodes to generate real-time views of the HLOC data, along with some raw trades in a table.
+I utilized the subscriber nodes to generate real-time views of the HLOC data as a candlestick canvas chart, along with some raw trades in a table.
 <img width="2251" height="1147" alt="image" src="https://github.com/user-attachments/assets/1d2cffd6-10c6-497c-bd65-77ccb4942b56" />
 
 
