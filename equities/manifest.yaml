@@ -7,10 +7,10 @@ metadata: {}
 tables:
   trade:
     file: tables/trade.yaml
-  static:
-    file: tables/static.yaml
   hloc:
     file: tables/hloc.yaml
+  static:
+    file: tables/static.yaml
 databases:
   equities:
     dir: databases/equities
@@ -18,10 +18,10 @@ databases:
     - equities-shard
     tables: []
 pipelines:
-  static:
-    file: pipelines/static.yaml
   equities-rt:
     file: pipelines/equities-rt.yaml
+  static:
+    file: pipelines/static.yaml
 router: router/router.yaml
 views:
   HLOC:

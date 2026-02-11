@@ -1,74 +1,10 @@
 {
     "vertices": [
         {
-            "id": "Expression",
-            "function": null,
-            "inputs": {
-                "": "*"
-            },
-            "outputs": {
-                "1f96a436-e594-4fe2-b98c-7854866d8553": "*"
-            },
-            "config": {
-                "expr": {
-                    "format": "q",
-                    "function": "// define some static data to be saved as splayed table\nuniverse:(!) . flip \n    (\n    (`AAPL;200.);\n    (`MSFT;150.);\n    (`NVDA;180.);\n    (`AMD;190.)\n    );\n\n// IPO date, company name, previous close price\nstatic:([] \n  sym:key[universe];\n  IPOdate:4?2000.01.01;\n  companyName:(\"Apple\";\"Microsoft\";\"NVDIA\";\"Advanced Micro Devices\");\n  previousClose:200 150 180 190.\n  );\n\nstatic\n"
-                },
-                "trigger": {
-                    "mode": "once"
-                }
-            },
-            "metadata": {
-                "type": "reader",
-                "plugin": "expr",
-                "params": [],
-                "initialState": null,
-                "stateful": false,
-                "version": 1,
-                "ui": {
-                    "color": "#0061ff",
-                    "type": "expr",
-                    "version": "insights-1.15.0",
-                    "data": {
-                        "id": "Expression",
-                        "function": null,
-                        "inputs": {
-                            "": "*"
-                        },
-                        "outputs": {
-                            "1f96a436-e594-4fe2-b98c-7854866d8553": "*"
-                        },
-                        "config": {
-                            "expr": {
-                                "format": "q",
-                                "function": "// define some static data to be saved as splayed table\nuniverse:(!) . flip \n    (\n    (`AAPL;200.);\n    (`MSFT;150.);\n    (`NVDA;180.);\n    (`AMD;190.)\n    );\n\n// IPO date, company name, previous close price\nstatic:([] \n  sym:key[universe];\n  IPOdate:4?2000.01.01;\n  companyName:(\"Apple\";\"Microsoft\";\"NVDIA\";\"Advanced Micro Devices\");\n  previousClose:200 150 180 190.\n  );\n\nstatic\n"
-                            },
-                            "trigger": {
-                                "mode": "once"
-                            }
-                        },
-                        "metadata": {
-                            "type": "reader",
-                            "plugin": "expr",
-                            "params": [],
-                            "initialState": null,
-                            "stateful": false,
-                            "version": 1
-                        }
-                    },
-                    "id": "Expression",
-                    "position": {
-                        "x": 66.19998168945312,
-                        "y": 157.59999084472656
-                    }
-                }
-            }
-        },
-        {
             "id": "kdb Insights Database",
             "function": null,
             "inputs": {
-                "1f96a436-e594-4fe2-b98c-7854866d8553": "*"
+                "a2410966-d262-4ffb-9201-1b0545b2fe5c": "*"
             },
             "outputs": {
                 "": "*"
@@ -96,7 +32,7 @@
                         "id": "kdb Insights Database",
                         "function": null,
                         "inputs": {
-                            "1f96a436-e594-4fe2-b98c-7854866d8553": "*"
+                            "a2410966-d262-4ffb-9201-1b0545b2fe5c": "*"
                         },
                         "outputs": {
                             "": "*"
@@ -121,8 +57,276 @@
                     },
                     "id": "kdb Insights Database",
                     "position": {
-                        "x": 352.1999816894531,
-                        "y": 158.59999084472656
+                        "x": 619.1999816894531,
+                        "y": 150.59999084472656
+                    }
+                }
+            }
+        },
+        {
+            "id": "Amazon S3",
+            "function": null,
+            "inputs": {
+                "": "*"
+            },
+            "outputs": {
+                "": "*"
+            },
+            "config": {
+                "path": [
+                    "s3://kxs-prd-cxt-twg-roinsightsdemo/close_spx.csv"
+                ],
+                "region": "eu-west-1",
+                "mode": "binary",
+                "offset": 0,
+                "chunking": "auto",
+                "watch": false,
+                "chunkSize": "1MB",
+                "tenant": "kxinsights"
+            },
+            "metadata": {
+                "type": "reader",
+                "plugin": "s3.reader",
+                "params": [],
+                "initialState": null,
+                "stateful": false,
+                "version": 1,
+                "ui": {
+                    "color": "#0061ff",
+                    "type": "s3.reader",
+                    "version": "insights-1.15.0",
+                    "data": {
+                        "id": "Amazon S3",
+                        "function": null,
+                        "inputs": {
+                            "": "*"
+                        },
+                        "outputs": {
+                            "": "*"
+                        },
+                        "config": {
+                            "path": [
+                                "s3://kxs-prd-cxt-twg-roinsightsdemo/close_spx.csv"
+                            ],
+                            "region": "eu-west-1",
+                            "mode": "binary",
+                            "offset": 0,
+                            "chunking": "auto",
+                            "watch": false,
+                            "__useAuth": false,
+                            "chunkSize": "1MB",
+                            "tenant": "kxinsights"
+                        },
+                        "metadata": {
+                            "type": "reader",
+                            "plugin": "s3.reader",
+                            "params": [],
+                            "initialState": null,
+                            "stateful": false,
+                            "version": 1
+                        }
+                    },
+                    "id": "Amazon S3",
+                    "position": {
+                        "x": -157.80001831054688,
+                        "y": 152.59999084472656
+                    }
+                }
+            }
+        },
+        {
+            "id": "CSV",
+            "function": null,
+            "inputs": {
+                "113c2079-0f33-419d-8d76-6e7802e16f77": "*"
+            },
+            "outputs": {
+                "4b09584e-4dd9-4ffe-b321-4c69427d6f2b": "*"
+            },
+            "config": {
+                "exclude": [],
+                "delimiter": ",",
+                "header": "first",
+                "encoding": "UTF8",
+                "newlines": false,
+                "schemaType": "schema",
+                "schema": [
+                    {
+                        "name": "Date",
+                        "datatype": "date"
+                    },
+                    {
+                        "name": "Time",
+                        "datatype": "timestamp"
+                    },
+                    {
+                        "name": "Open",
+                        "datatype": "float"
+                    },
+                    {
+                        "name": "High",
+                        "datatype": "float"
+                    },
+                    {
+                        "name": "Low",
+                        "datatype": "float"
+                    },
+                    {
+                        "name": "Close",
+                        "datatype": "float"
+                    },
+                    {
+                        "name": "AdjClose",
+                        "datatype": "float"
+                    },
+                    {
+                        "name": "Volume",
+                        "datatype": "long"
+                    },
+                    {
+                        "name": "AssetCode",
+                        "datatype": "symbol"
+                    }
+                ]
+            },
+            "metadata": {
+                "type": "decoder",
+                "plugin": "csv",
+                "params": [],
+                "initialState": null,
+                "stateful": false,
+                "version": 1,
+                "ui": {
+                    "color": "#76c398",
+                    "type": "csv",
+                    "version": "insights-1.15.0",
+                    "data": {
+                        "id": "CSV",
+                        "function": null,
+                        "inputs": {
+                            "113c2079-0f33-419d-8d76-6e7802e16f77": "*"
+                        },
+                        "outputs": {
+                            "4b09584e-4dd9-4ffe-b321-4c69427d6f2b": "*"
+                        },
+                        "config": {
+                            "exclude": [],
+                            "delimiter": ",",
+                            "header": "first",
+                            "__setSchema": true,
+                            "encoding": "UTF8",
+                            "newlines": false,
+                            "schemaType": "schema",
+                            "schema": [
+                                {
+                                    "name": "Date",
+                                    "datatype": "date"
+                                },
+                                {
+                                    "name": "Time",
+                                    "datatype": "timestamp"
+                                },
+                                {
+                                    "name": "Open",
+                                    "datatype": "float"
+                                },
+                                {
+                                    "name": "High",
+                                    "datatype": "float"
+                                },
+                                {
+                                    "name": "Low",
+                                    "datatype": "float"
+                                },
+                                {
+                                    "name": "Close",
+                                    "datatype": "float"
+                                },
+                                {
+                                    "name": "AdjClose",
+                                    "datatype": "float"
+                                },
+                                {
+                                    "name": "Volume",
+                                    "datatype": "long"
+                                },
+                                {
+                                    "name": "AssetCode",
+                                    "datatype": "symbol"
+                                }
+                            ]
+                        },
+                        "metadata": {
+                            "type": "decoder",
+                            "plugin": "csv",
+                            "params": [],
+                            "initialState": null,
+                            "stateful": false,
+                            "version": 1
+                        }
+                    },
+                    "id": "CSV",
+                    "position": {
+                        "x": 82.19998168945312,
+                        "y": 150.59999084472656
+                    }
+                }
+            }
+        },
+        {
+            "id": "Map",
+            "function": {
+                "format": "q",
+                "function": "// @param data {any} data from the previous node\n// @return {any} data to pass to the next node\n{[data]\n    update AssetCode:`AAPL, \n      Open:Open%10,\n      High:High%10,\n      Low:Low%10,\n      Close:Close%10,\n      AdjClose:AdjClose%10\n    from data\n    }"
+            },
+            "inputs": {
+                "4b09584e-4dd9-4ffe-b321-4c69427d6f2b": "*"
+            },
+            "outputs": {
+                "a2410966-d262-4ffb-9201-1b0545b2fe5c": "*"
+            },
+            "config": {
+                "allowPartials": true
+            },
+            "metadata": {
+                "type": "operator",
+                "plugin": "map",
+                "params": [],
+                "initialState": null,
+                "stateful": false,
+                "version": 1,
+                "ui": {
+                    "color": "#ffae72",
+                    "type": "map",
+                    "version": "insights-1.15.0",
+                    "data": {
+                        "id": "Map",
+                        "function": {
+                            "format": "q",
+                            "function": "// @param data {any} data from the previous node\n// @return {any} data to pass to the next node\n{[data]\n    update AssetCode:`AAPL, \n      Open:Open%10,\n      High:High%10,\n      Low:Low%10,\n      Close:Close%10,\n      AdjClose:AdjClose%10\n    from data\n    }"
+                        },
+                        "inputs": {
+                            "4b09584e-4dd9-4ffe-b321-4c69427d6f2b": "*"
+                        },
+                        "outputs": {
+                            "a2410966-d262-4ffb-9201-1b0545b2fe5c": "*"
+                        },
+                        "config": {
+                            "allowPartials": true
+                        },
+                        "metadata": {
+                            "type": "operator",
+                            "plugin": "map",
+                            "params": [],
+                            "initialState": null,
+                            "stateful": false,
+                            "version": 1
+                        }
+                    },
+                    "id": "Map",
+                    "position": {
+                        "x": 351.1999816894531,
+                        "y": 151.59999084472656
                     }
                 }
             }
@@ -130,13 +334,46 @@
     ],
     "edges": [
         {
-            "destination": "kdb Insights Database",
-            "source": "Expression",
-            "edge": "1f96a436-e594-4fe2-b98c-7854866d8553",
+            "destination": "CSV",
+            "source": "Amazon S3",
+            "edge": "113c2079-0f33-419d-8d76-6e7802e16f77",
             "metadata": {
                 "ui": {
-                    "id": "1f96a436-e594-4fe2-b98c-7854866d8553",
-                    "source": "Expression",
+                    "id": "113c2079-0f33-419d-8d76-6e7802e16f77",
+                    "source": "Amazon S3",
+                    "target": "CSV",
+                    "sourceHandle": "0",
+                    "targetHandle": "0",
+                    "animated": false,
+                    "type": "wideBezier"
+                }
+            },
+            "valid": true
+        },
+        {
+            "destination": "Map",
+            "source": "CSV",
+            "edge": "4b09584e-4dd9-4ffe-b321-4c69427d6f2b",
+            "metadata": {
+                "ui": {
+                    "id": "4b09584e-4dd9-4ffe-b321-4c69427d6f2b",
+                    "source": "CSV",
+                    "target": "Map",
+                    "sourceHandle": "0",
+                    "targetHandle": "0",
+                    "animated": true
+                }
+            },
+            "valid": true
+        },
+        {
+            "destination": "kdb Insights Database",
+            "source": "Map",
+            "edge": "a2410966-d262-4ffb-9201-1b0545b2fe5c",
+            "metadata": {
+                "ui": {
+                    "id": "a2410966-d262-4ffb-9201-1b0545b2fe5c",
+                    "source": "Map",
                     "target": "kdb Insights Database",
                     "sourceHandle": "0",
                     "targetHandle": "0",

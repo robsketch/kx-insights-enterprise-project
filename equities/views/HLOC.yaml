@@ -183,9 +183,8 @@ data:
       _isStreamingSubscription: false
       _selectedAnalytic: getData
     static:
-      _pagingType: NONE
-      _autoExecute: true
       _autoExec: true
+      _autoExecute: true
       _columns: []
       _dataType: api
       _dataSource: kdb
@@ -203,7 +202,7 @@ data:
       - isExpanded: false
         weight: 1
       - isExpanded: true
-        weight: 1
+        weight: 0
       - isExpanded: false
         weight: 2
       _selectedAnalytic: getData
@@ -221,7 +220,7 @@ data:
         type: timestamp
         description: Inclusive start time for period of interest.
         required: false
-        value: '2026-02-11T09:39:00.000000000Z'
+        value: '2026-02-10T00:00:00.000000000Z'
         isViewState: false
         useRollingSyntax: false
       - id: endTS
@@ -272,7 +271,7 @@ data:
         required: false
         value:
         - '0'
-        - '2000'
+        - '100'
         - 'on'
         isViewState: false
         useRollingSyntax: false
@@ -322,7 +321,7 @@ data:
         type: timestamp
         description: Inclusive start time for period of interest.
         required: false
-        value: '2026-02-11T09:39:00.000000000Z'
+        value: '2026-02-10T00:00:00.000000000Z'
         isViewState: false
         useRollingSyntax: false
       - id: endTS
@@ -373,7 +372,7 @@ data:
         required: false
         value:
         - '0'
-        - '2000'
+        - '100'
         - 'on'
         isViewState: false
         useRollingSyntax: false
@@ -423,10 +422,10 @@ data:
     widgets:
     - id: e7d65436-324a-d307-1338-75e8568084bc
       layout:
-        row: 13
-        column: 2
-        rowSpan: 11
-        colSpan: 20
+        row: 11
+        column: 10
+        rowSpan: 10
+        colSpan: 15
       component:
         id: 9b3bf5cf-20f3-29b0-2926-2acf662c4caf
         key: Datagrid
@@ -540,8 +539,8 @@ data:
       layout:
         row: 0
         column: 1
-        rowSpan: 12
-        colSpan: 22
+        rowSpan: 10
+        colSpan: 15
       component:
         id: 058f3aa3-bf66-bf97-11b3-3e6cab7bad4b
         key: ChartJS
@@ -624,21 +623,21 @@ data:
               DateFormat: kk:mm:ss
           YAxes:
           - _Hidden:
+              _Type: linear
               _AxisId: axis_6530
               _Index: 0
               _Label: YAxis 1
-              _Type: linear
             GridLines:
               GridLinesColor: '#000000'
             Labels:
+              FontColor: '#000000'
               MaxWidth: 0
               _ReverseCache: false
-              FontColor: '#000000'
               DateFormat: YYYY-MM-DD
             Range:
-              UseDataRange: true
               UseMinMax: true
               UseMinMaxReset: false
+              UseDataRange: true
           format:
             widgetTitle: AAPL Real-Time OHLC
           version: v2.8.0
@@ -647,83 +646,283 @@ data:
         widgets: []
         definitionId: '1007'
         hasOnSettingsChange: true
-    - id: 68a01982-9a27-5938-8e3c-4e631b288648
+    - id: 0a9c3fa5-6ac0-2116-9c7f-8680a326041f
       layout:
         row: 1
-        column: 24
-        rowSpan: 10
-        colSpan: 11
+        column: 17
+        rowSpan: 9
+        colSpan: 18
       component:
-        id: 084c9cbf-e9f2-c066-ffe5-b6145b8906e5
-        key: Datagrid
+        id: ddba7145-8d96-a6b5-f8b5-bbbe604b8783
+        key: ChartGL
         options:
           version: v2.11.0
-          datagridPossibleColumns:
-          - sym
-          - IPOdate
-          - companyName
-          - previousClose
-          datagridPossibleHeaderColumns:
-          - none
-          datagridPossibleColumnsWithItself:
-          - <this>
-          - sym
-          - IPOdate
-          - companyName
-          - previousClose
-          selectedColumnPossibleValues:
-          - sym
-          - IPOdate
-          - companyName
-          - previousClose
-          highlightTargetPossibleValues:
-          - sym
-          - IPOdate
-          - companyName
-          - previousClose
-          - '*'
-          sortingPossibleValues:
-          - ''
-          - sym
-          - IPOdate
-          - companyName
-          - previousClose
-          footerPossibleValues:
+          possibleLegendGroups:
           - None
-          - Average
-          - Count
-          - Sum
-          - WeightedAverage
+          possiblePositions:
+          - Top
+          - Bottom
+          - Left
+          - Right
+          Style:
+            advanced: ''
+            cssClasses: ''
           Basics:
+            Name: ''
+            Hover: ''
+            Selected: ''
+            Focus: ''
+            SelectFirstPoint: false
+            RangeSelection: false
+            Zoom: true
+            Duration: 400
+            Easing: easeOutQuart
+            TrackLoadTime: false
+            LoadTime: ''
+            UsePatterns: false
+            UseHierarchicalRules: true
+          Layers:
+          - possibleActionsColumns:
+            - None
+            - <thisX>
+            - <thisY>
+            - <thisName>
+            - Date
+            - Time
+            - Open
+            - High
+            - Low
+            - Close
+            - AdjClose
+            - Volume
+            - AssetCode
+            possibleColorColumns:
+            - None
+            - Date
+            - Time
+            - Open
+            - High
+            - Low
+            - Close
+            - AdjClose
+            - Volume
+            - AssetCode
+            possibleRadiusData:
+            - Fixed Size
+            - Date
+            - Time
+            - Open
+            - High
+            - Low
+            - Close
+            - AdjClose
+            - Volume
+            - AssetCode
+            possibleLayers: []
+            possibleRulesColumns: []
+            possibleXColumns:
+            - Date
+            - Time
+            - Open
+            - High
+            - Low
+            - Close
+            - AdjClose
+            - Volume
+            - AssetCode
+            possibleYColumns:
+            - '*'
+            - Date
+            - Time
+            - Open
+            - High
+            - Low
+            - Close
+            - AdjClose
+            - Volume
+            - AssetCode
+            possibleMultiColumns:
+            - ''
+            - '*'
+            - Date
+            - Time
+            - Open
+            - High
+            - Low
+            - Close
+            - AdjClose
+            - Volume
+            - AssetCode
             Data:
               _dashboardsType: data
               value: static
-          ColumnsConfiguration:
-          - Field: sym
-            DisplayName: sym
-            WidthWeight: 100
-            MinWidthAbsolute: 100
-            TextAlign: left
-          - Field: IPOdate
-            DisplayName: IPOdate
-            Format: Date
-            WidthWeight: 80
-            MinWidthAbsolute: 80
-            TextAlign: right
-          - Field: companyName
-            DisplayName: companyName
-            WidthWeight: 100
-            MinWidthAbsolute: 100
-          - Field: previousClose
-            DisplayName: previousClose
-            Format: Formatted Number
-            Precision: 4
-            WidthWeight: 140
-            MinWidthAbsolute: 140
-            TextAlign: right
-          Style:
-            EvenRowBackgroundColorOverride: '#ffffff'
-            OddRowBackgroundColorOverride: '#f4f4f4'
+            PaletteTheme: ' '
+            Palette:
+            - type: '#0061FF'
+            - type: '#F23A66'
+            - type: '#009BAB'
+            - type: '#7647CC'
+            - type: '#FFC300'
+            - type: '#9FA3A6'
+            - type: '#003A99'
+            - type: '#A90B31'
+            - type: '#005D67'
+            - type: '#452481'
+            Actions: []
+            HighlightRules: []
+            _Id: L0
+            _Type: Candlestick
+            possibleXAxes:
+            - X-Axis 1
+            possibleYAxes:
+            - Y-Axis 1
+            Name: OHLC
+            XAxisId: X-Axis 1
+            YAxisId: Y-Axis 1
+            Opacity: 80
+            LegendGroup: None
+            ShowCurrentTick: false
+            CacheStreamingData: false
+            Legend: true
+            Enabled: true
+            Labels:
+              Align: center
+              Color: '#000000'
+              Enabled: false
+              Font:
+                Bold: false
+                Size: 12
+              Frequency: 1
+              Offset: '0'
+              Rotation: 0
+              MaxLabels: 10
+              Template: '{{x}}, {{toFixed y 2}}'
+            XAxis: Date
+            XAxisMulti: ''
+            Open: Open
+            High: High
+            Low: Low
+            Close: Close
+            CandlestickFormat:
+              BarWidth: 95
+              BarFixedWidth: 10
+              BarWidthType: Percentage
+              BarOrientation: Vertical
+              BearColor: '#ff0000'
+              BullColor: '#00ff00'
+              NeutralColor: '#ffffff'
+              WickColor: '#7b8284'
+            Bubbles: {}
+          Xaxes:
+          - Bounds: ''
+            Type: Linear
+            Position: Bottom
+            Width: 0
+            Ticks: 10
+            Color: ''
+            Stacked: false
+            Title:
+              Display: false
+              LabelString: ''
+              FontSize: 16
+            Range:
+              UseMinMax: false
+              Min: ''
+              Max: ''
+              SelectionMin: ''
+              SelectionMax: ''
+              ResetToNull: true
+            Gridlines:
+              GridlinesOffset: false
+              GridlinesColor: ''
+              GridlinesOpacity: 15
+            Format:
+              Display: true
+              Rotation: 0
+              BeginAtZero: false
+              Format: Number
+              DateFormat: ''
+              Precision: 2
+              FontSize: 12
+              Prefix: ''
+              Suffix: ''
+              HideTrailingZeroes: false
+              MultiAxis: []
+          Yaxes:
+          - Bounds: ''
+            Type: Linear
+            Position: Left
+            Width: 0
+            Ticks: 10
+            Color: ''
+            Stacked: false
+            Title:
+              Display: false
+              LabelString: ''
+              FontSize: 16
+            Range:
+              UseMinMax: false
+              Min: ''
+              Max: ''
+              SelectionMin: ''
+              SelectionMax: ''
+              ResetToNull: true
+            Gridlines:
+              GridlinesOffset: false
+              GridlinesColor: ''
+              GridlinesOpacity: 15
+            Format:
+              Display: true
+              Rotation: 0
+              BeginAtZero: false
+              Format: Number
+              DateFormat: ''
+              Precision: 2
+              FontSize: 12
+              Prefix: ''
+              Suffix: ''
+              HideTrailingZeroes: false
+          Overlay:
+            ShowCrosshairs: true
+            ShowCoordinates: true
+            SnapToPoint: true
+            UseCustomTooltip: false
+            CustomTooltip: '<table><thead><tr><th>{{this.0.xAxis}}</th><th></th></tr></thead><tbody>{{#each
+              this}}<tr><td width="{{width}}"><i class="{{icon}}" style="color:{{color}};
+              {{image}};"></i> {{name}}: </td><td>{{yAxis}}</td></tr>{{/each}}</tbody></table>'
+            ShowAllLayers: true
+            ShowAllPoints: false
+            GroupByLayer: false
+          Legend:
+            Position: Top
+            UseCustomLegend: false
+            CustomLegend: "\n<ul class=\"chartgl-legend\">\n  {{#each this}}\n    {{!--
+              legend color --}}\n    <li>\n      {{#if icon}}\n        <i style=\"height:{{width}}px;color:{{color}};margin-top:2.5px;margin-right:5px;{{image}}\"class=\"fa
+              {{icon}}\"></i>\n      {{else}}  \n        {{#if bullColor}}\n          <span
+              style=\"margin-right:5px;\">  \n            <i style=\"font-size: 16px;color:{{color}};margin-top:0;\"
+              class=\"fa fa-ellipsis-v\"></i>\n            <i style=\"font-size: 8px;margin-left:-5px;color:{{bullColor}};margin-top:3px;position:
+              absolute;\"class=\"fa fa-square\"></i>\n          </span>\n        {{else}}\n
+              \         {{#if isHeatmap}}\n            <svg style=\"background:{{color}};
+              border-radius:2px;width:{{width}}px; height:{{width}}px;margin-top:2px;margin-right:5px;{{image}}\"class=\"fa
+              fa-square\"></svg>\n          {{else}}\n            <i style=\"height:{{width}}px;color:{{color}};margin-top:2.5px;margin-right:5px;{{image}}\"class=\"fa
+              fa-square\"></i>\n            {{/if}}\n        {{/if}}\n      {{/if}}\n\n
+              \     {{!-- legend text --}}\n      <span style=\"color:{{fontColor}};
+              text-decoration:{{strike}}\" id=\"{{text}}\">{{text}}</span>\n    </li>\n
+              \ {{/each}}\n</ul>"
+            LegendGroups: []
+          Annotations:
+            ShowAnnotateControl: false
+            Annotations: ''
+          FileExport:
+            Actions: []
+            FileName: []
+            ShowExportCsvButton: false
+            ShowExportExcelButton: false
+            ShowExportPngButton: false
+            PngButton: Export Png
+            UseChartFormat: false
+          OverrideRules: []
+          HierarchicalRules: []
           Alignment:
             paddingLeft: 0
             paddingRight: 0
@@ -735,18 +934,25 @@ data:
             innerPaddingBottom: 0
             titlePaddingLeft: 0
             titlePaddingRight: 0
+            titlePaddingTop: 7
+            titlePaddingBottom: 7
           format:
-            widgetTitle: Static Data
+            widgetTitle: AAPL Historical OHLC
+            titleFontSize: 16
+            titleHorizontal: Center
+            titleShadow: false
             tileBorderWidth: 0
             tileBorderRounding: 0
             tileBorderColor: '#000000'
             tileBackgroundColor: '#000000'
             tileTransparentBackground: true
             tileShadow: false
+          possiblePalettes:
+          - ' '
         containerId: null
         components: []
         widgets: []
-        definitionId: '21'
+        definitionId: '669'
         hasOnSettingsChange: true
     relativeHeight: true
     rowCount: 24
@@ -794,8 +1000,8 @@ data:
   popups: []
   notifications: ''
   version: v2.3.0
-  wasChanged: false
-  lastUpdateDate: '2026-02-11T09:46:32.985+00:00'
+  wasChanged: true
+  lastUpdateDate: '2026-02-11T13:16:55.403+00:00'
   id: c1700083-1d9b-4837-b259-a2cb193cd2e7
   creationDate: '2026-02-10T18:27:13.026+00:00'
   thumb: ''
@@ -820,4 +1026,4 @@ screenDetails:
   value: c8eec064-df11-0b5f-d79b-f6bec4ae2d43
 thumb: ''
 creationDate: '2026-02-10T18:27:13.026+00:00'
-lastUpdateDate: '2026-02-11T09:46:32.985+00:00'
+lastUpdateDate: '2026-02-11T13:16:55.403+00:00'
